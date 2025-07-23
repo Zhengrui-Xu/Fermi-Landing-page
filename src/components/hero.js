@@ -76,26 +76,26 @@ export default function Hero() {
         className="absolute inset-0"
         animate={{
           background: [
-            // Start with intermediate colors for smooth blending
-            'linear-gradient(90deg, rgba(255,182,193,0.7) 0%, rgba(255,240,245,0.8) 25%, rgba(255,255,255,1) 50%, rgba(240,248,255,0.8) 75%, rgba(173,216,230,0.7) 100%)',
-            // First breathe - gentle increase with pink/blue intermediates
-            'linear-gradient(90deg, rgba(255,105,135,0.5) 0%, rgba(255,182,193,0.6) 25%, rgba(255,255,255,1) 50%, rgba(173,216,230,0.6) 75%, rgba(135,206,250,0.5) 100%)',
-            // Peak intensity with full intermediate spectrum
-            'linear-gradient(90deg, rgba(255,105,135,0.8) 0%, rgba(255,140,165,0.7) 25%, rgba(255,255,255,1) 50%, rgba(154,191,240,0.7) 75%, rgba(135,206,250,0.8) 100%)',
-            // Smooth transition back
-            'linear-gradient(90deg, rgba(255,140,165,0.6) 0%, rgba(255,200,215,0.5) 25%, rgba(255,255,255,1) 50%, rgba(200,225,250,0.5) 75%, rgba(154,191,240,0.6) 100%)',
-            // Gentle dip with soft intermediates
-            'linear-gradient(90deg, rgba(255,182,193,0.4) 0%, rgba(255,220,230,0.5) 25%, rgba(255,255,255,1) 50%, rgba(220,235,250,0.5) 75%, rgba(173,216,230,0.4) 100%)',
-            // Back to start with smooth fade
-            'linear-gradient(90deg, rgba(255,182,193,0.7) 0%, rgba(255,240,245,0.8) 25%, rgba(255,255,255,1) 50%, rgba(240,248,255,0.8) 75%, rgba(173,216,230,0.7) 100%)',
+            // White-dominant center with red far left top, blue far right bottom
+            'radial-gradient(ellipse 50% 70% at 5% 42%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 58%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
+            // Red moves up very slightly, blue moves down very slightly - breathing expansion with moderate spread
+            'radial-gradient(ellipse 65% 85% at 8% 35%, rgba(255,85,120,0.8) 0%, transparent 80%), radial-gradient(ellipse 65% 85% at 92% 65%, rgba(115,186,230,0.8) 0%, transparent 80%), radial-gradient(ellipse 320% 160% at 50% 50%, rgba(255,255,255,1) 0%, rgba(248,250,255,0.95) 85%, transparent 100%)',
+            // Peak breathing - red at top, blue at bottom, wider spread but controlled, strongest colors
+            'radial-gradient(ellipse 75% 95% at 10% 25%, rgba(255,65,105,0.9) 0%, transparent 75%), radial-gradient(ellipse 75% 95% at 90% 75%, rgba(95,166,210,0.9) 0%, transparent 75%), radial-gradient(ellipse 340% 170% at 50% 50%, rgba(255,255,255,1) 0%, rgba(245,248,255,1) 90%, transparent 100%)',
+            // Reverse direction - red moves down very slightly, blue moves up very slightly with moderate spread
+            'radial-gradient(ellipse 65% 85% at 7% 65%, rgba(255,120,150,0.6) 0%, transparent 82%), radial-gradient(ellipse 65% 85% at 93% 35%, rgba(140,195,240,0.6) 0%, transparent 82%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(250,252,255,0.92) 82%, transparent 100%)',
+            // Red at bottom, blue at top - gentle exhale with moderate spread
+            'radial-gradient(ellipse 70% 90% at 3% 75%, rgba(255,150,175,0.5) 0%, transparent 88%), radial-gradient(ellipse 70% 90% at 97% 25%, rgba(165,210,250,0.5) 0%, transparent 88%), radial-gradient(ellipse 290% 145% at 50% 50%, rgba(255,255,255,0.92) 0%, rgba(252,253,255,0.88) 78%, transparent 100%)',
+            // Return to start - red back to top, blue to bottom
+            'radial-gradient(ellipse 50% 70% at 5% 42%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 58%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
           ],
         }}
         transition={{
-          duration: 5,
-          ease: [0.4, 0.0, 0.2, 1],
+          duration: 5.5,
+          ease: [0.45, 0.05, 0.55, 0.95],
           repeat: Infinity,
           repeatType: 'loop',
-          times: [0, 0.15, 0.35, 0.55, 0.75, 1],
+          times: [0, 0.2, 0.4, 0.6, 0.8, 1],
         }}
       />
 
