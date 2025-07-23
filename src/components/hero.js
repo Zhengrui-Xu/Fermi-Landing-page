@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import { ArrowRight, Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useGSAP } from '@/hooks/useGSAP'
-import GradientAnimation from 'react-gradient-animation'
 
 export default function Hero() {
   const heroRef = useRef()
@@ -69,172 +69,35 @@ export default function Hero() {
     <section
       id="home"
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white to-[#F8F9FF] overflow-hidden">
-        {/* Large vibrant gradient areas with stronger colors */}
-        <motion.div
-          className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full opacity-50"
-          style={{
-            background:
-              'radial-gradient(circle, #B22234 0%, rgba(178,34,52,0.6) 25%, rgba(178,34,52,0.3) 50%, transparent 70%)',
-            filter: 'blur(80px)',
-          }}
-          animate={{
-            x: [0, 200, -150, 100, 0],
-            y: [0, -100, 120, -80, 0],
-            scale: [1, 1.2, 0.9, 1.1, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-
-        <motion.div
-          className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-40"
-          style={{
-            background:
-              'radial-gradient(circle, #3C3B6E 0%, rgba(60,59,110,0.5) 25%, rgba(60,59,110,0.2) 50%, transparent 70%)',
-            filter: 'blur(80px)',
-          }}
-          animate={{
-            x: [0, -180, 140, -100, 0],
-            y: [0, 160, -110, 80, 0],
-            scale: [1, 0.8, 1.3, 0.9, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-
-        <motion.div
-          className="absolute -bottom-40 left-0 w-[500px] h-[500px] rounded-full opacity-35"
-          style={{
-            background:
-              'radial-gradient(circle, #B22234 0%, rgba(178,34,52,0.4) 30%, rgba(178,34,52,0.1) 60%, transparent 80%)',
-            filter: 'blur(100px)',
-          }}
-          animate={{
-            x: [0, 220, -80, 140, 0],
-            y: [0, -90, 140, -60, 0],
-            scale: [1, 1.1, 0.8, 1.2, 1],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-
-        <motion.div
-          className="absolute -bottom-40 -right-20 w-[500px] h-[500px] rounded-full opacity-45"
-          style={{
-            background:
-              'radial-gradient(circle, #3C3B6E 0%, rgba(60,59,110,0.4) 30%, rgba(60,59,110,0.1) 60%, transparent 80%)',
-            filter: 'blur(90px)',
-          }}
-          animate={{
-            x: [0, -160, 110, -90, 0],
-            y: [0, 120, -90, 50, 0],
-            scale: [1, 0.9, 1.4, 0.8, 1],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-
-        {/* Center flowing gradient */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full opacity-20"
-          style={{
-            background: 'conic-gradient(from 0deg, #B22234 0%, #3C3B6E 50%, #B22234 100%)',
-            filter: 'blur(120px)',
-            transform: 'translate(-50%, -50%)',
-          }}
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.3, 0.7, 1.1, 1],
-            x: [0, 40, -40, 20, 0],
-            y: [0, -30, 30, -15, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-
-        {/* Additional flowing elements */}
-        <motion.div
-          className="absolute top-20 left-1/3 w-[300px] h-[300px] rounded-full opacity-25"
-          style={{
-            background:
-              'radial-gradient(ellipse 80% 50%, #3C3B6E 0%, rgba(60,59,110,0.3) 40%, transparent 70%)',
-            filter: 'blur(60px)',
-          }}
-          animate={{
-            x: [0, 100, -140, 60, 0],
-            y: [0, -50, 80, -30, 0],
-            scaleX: [1, 1.4, 0.7, 1.2, 1],
-            scaleY: [1, 0.8, 1.4, 0.9, 1],
-            rotate: [0, 180, -90, 90, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-
-        {/* New moving gradient orbs */}
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-[250px] h-[250px] rounded-full opacity-30"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(178,34,52,0.4) 0%, rgba(178,34,52,0.2) 40%, transparent 70%)',
-            filter: 'blur(70px)',
-          }}
-          animate={{
-            x: [0, -80, 120, -60, 0],
-            y: [0, 140, -100, 70, 0],
-            scale: [1, 0.7, 1.4, 0.9, 1],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-
-        <motion.div
-          className="absolute bottom-1/4 left-1/4 w-[280px] h-[280px] rounded-full opacity-25"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(60,59,110,0.3) 0%, rgba(60,59,110,0.15) 50%, transparent 80%)',
-            filter: 'blur(85px)',
-          }}
-          animate={{
-            x: [0, 130, -100, 80, 0],
-            y: [0, -80, 120, -50, 0],
-            scale: [1, 1.2, 0.8, 1.3, 1],
-          }}
-          transition={{
-            duration: 11,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/20"></div>
-      </div>
+      <motion.div
+        className="absolute inset-0"
+        animate={{
+          background: [
+            // Subtle colors - 50% of previous intensity
+            'linear-gradient(90deg, rgba(255,105,135,0.9) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.9) 100%)',
+            // First breathe - gentle increase
+            'linear-gradient(90deg, rgba(255,105,135,0.45) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.45) 100%)',
+            // Peak intensity
+            'linear-gradient(90deg, rgba(255,105,135,0.6) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.6) 100%)',
+            // Back to medium
+            'linear-gradient(90deg, rgba(255,105,135,0.4) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.4) 100%)',
+            // Gentle dip
+            'linear-gradient(90deg, rgba(255,105,135,0.25) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.25) 100%)',
+            // Back to start
+            'linear-gradient(90deg, rgba(255,105,135,0.9) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.9) 100%)',
+          ],
+        }}
+        transition={{
+          duration: 8,
+          ease: 'easeInOut',
+          repeat: Infinity,
+          repeatType: 'loop',
+          times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        }}
+      />
 
       <div className="container mx-auto px-4 pt-20 pb-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -243,7 +106,7 @@ export default function Hero() {
             <div className="hero-title">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
                 Powering the
-                <span className="text-[#B22234] block">Future</span>
+                <span className="text-[#B31942] block">Future</span>
               </h1>
             </div>
 
@@ -275,15 +138,15 @@ export default function Hero() {
             {/* Stats */}
             <div className="mt-16 grid grid-cols-3 gap-8 text-center lg:text-left">
               <div>
-                <div className="text-3xl font-bold text-[#3C3B6E]">500+</div>
+                <div className="text-3xl font-bold text-[#0A3161]">500+</div>
                 <div className="text-sm text-gray-500">Projects Completed</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#3C3B6E]">99.9%</div>
+                <div className="text-3xl font-bold text-[#0A3161]">99.9%</div>
                 <div className="text-sm text-gray-500">Efficiency Rate</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#3C3B6E]">24/7</div>
+                <div className="text-3xl font-bold text-[#0A3161]">24/7</div>
                 <div className="text-sm text-gray-500">Support Available</div>
               </div>
             </div>
@@ -293,14 +156,14 @@ export default function Hero() {
           <div className="hero-image relative">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               {/* Placeholder for hero image - replace with actual image */}
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#B22234]/8 to-[#3C3B6E]/8 border border-gray-200 flex items-center justify-center backdrop-blur-sm">
-                <div className="text-6xl text-[#3C3B6E]/30">⚡</div>
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#B31942]/8 to-[#0A3161]/8 border border-gray-200 flex items-center justify-center backdrop-blur-sm">
+                <div className="text-6xl text-[#0A3161]/30">⚡</div>
               </div>
 
               {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#B22234]/8 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-[#3C3B6E]/8 rounded-full animate-pulse animation-delay-200"></div>
-              <div className="absolute top-1/2 -right-8 w-12 h-12 bg-[#B22234]/12 rounded-full animate-pulse animation-delay-500"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#B31942]/8 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-[#0A3161]/8 rounded-full animate-pulse animation-delay-200"></div>
+              <div className="absolute top-1/2 -right-8 w-12 h-12 bg-[#B31942]/12 rounded-full animate-pulse animation-delay-500"></div>
             </div>
           </div>
         </div>
