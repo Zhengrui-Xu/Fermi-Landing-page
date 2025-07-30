@@ -76,102 +76,58 @@ export default function Hero() {
         className="absolute inset-0"
         animate={{
           background: [
-            // START: Red left, Blue right - baseline positions
-            'radial-gradient(ellipse 50% 70% at 5% 45%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 55%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
+            // 0% - START/END: Red left, Blue right baseline
+            'radial-gradient(ellipse 50% 70% at 5% 50%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 50%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
 
-            // UP/DOWN 1 FLOW: Gentle wave start - Red drifts up-left, Blue flows down-right
-            'radial-gradient(ellipse 55% 75% at 3% 32%, rgba(255,98,128,0.73) 0%, transparent 83%), radial-gradient(ellipse 55% 75% at 97% 68%, rgba(128,198,243,0.73) 0%, transparent 83%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(249,251,255,0.91) 81%, transparent 100%)',
+            // First breathing cycle - ALL THE WAY UP
+            'radial-gradient(ellipse 65% 90% at 5% 5%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 95% 95%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // UP/DOWN 1 RISE: Floating higher with gentle curve - wavy orbital motion
-            'radial-gradient(ellipse 60% 80% at 2% 20%, rgba(255,90,120,0.76) 0%, transparent 80%), radial-gradient(ellipse 60% 80% at 98% 80%, rgba(120,190,235,0.76) 0%, transparent 80%), radial-gradient(ellipse 318% 162% at 50% 50%, rgba(255,255,255,0.97) 0%, rgba(248,250,255,0.93) 82%, transparent 100%)',
+            // First breathing cycle - ALL THE WAY DOWN  
+            'radial-gradient(ellipse 65% 90% at 5% 95%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 95% 5%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // UP/DOWN 1 PEAK: Gentle peak with orbital drift - like floating on water surface
-            'radial-gradient(ellipse 64% 84% at 1% 12%, rgba(255,85,115,0.78) 0%, transparent 78%), radial-gradient(ellipse 64% 84% at 99% 88%, rgba(115,185,230,0.78) 0%, transparent 78%), radial-gradient(ellipse 325% 167% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(247,249,255,0.94) 84%, transparent 100%)',
+            // Second breathing cycle - ALL THE WAY UP
+            'radial-gradient(ellipse 65% 90% at 5% 5%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 95% 95%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // UP/DOWN 1 DRIFT: Gentle drift back with wavy motion - like water current
-            'radial-gradient(ellipse 58% 78% at 2% 28%, rgba(255,92,122,0.75) 0%, transparent 81%), radial-gradient(ellipse 58% 78% at 98% 72%, rgba(122,192,237,0.75) 0%, transparent 81%), radial-gradient(ellipse 315% 160% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(248,250,255,0.92) 82%, transparent 100%)',
+            // Second breathing cycle - ALL THE WAY DOWN
+            'radial-gradient(ellipse 65% 90% at 5% 95%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 95% 5%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // UP/DOWN 1 SETTLE: Flowing back to baseline with gentle curve
-            'radial-gradient(ellipse 52% 72% at 4% 38%, rgba(255,100,130,0.72) 0%, transparent 83%), radial-gradient(ellipse 52% 72% at 96% 62%, rgba(130,200,245,0.72) 0%, transparent 83%), radial-gradient(ellipse 308% 154% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(249,250,255,0.90) 80%, transparent 100%)',
+            // Third breathing cycle - ALL THE WAY UP
+            'radial-gradient(ellipse 65% 90% at 5% 5%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 95% 95%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // UP/DOWN 2 FLOW: Opposite wave - Red flows down-left, Blue drifts up-right
-            'radial-gradient(ellipse 56% 76% at 3% 68%, rgba(255,95,125,0.74) 0%, transparent 82%), radial-gradient(ellipse 56% 76% at 97% 32%, rgba(125,195,240,0.74) 0%, transparent 82%), radial-gradient(ellipse 312% 157% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(248,251,255,0.91) 81%, transparent 100%)',
+            // Third breathing cycle - ALL THE WAY DOWN
+            'radial-gradient(ellipse 65% 90% at 5% 95%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 95% 5%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // UP/DOWN 2 SINK: Gentle descent with orbital curve - like underwater current
-            'radial-gradient(ellipse 62% 82% at 2% 80%, rgba(255,88,118,0.77) 0%, transparent 79%), radial-gradient(ellipse 62% 82% at 98% 20%, rgba(118,188,232,0.77) 0%, transparent 79%), radial-gradient(ellipse 320% 165% at 50% 50%, rgba(255,255,255,0.97) 0%, rgba(247,250,255,0.93) 83%, transparent 100%)',
+            // SWITCH - Red moves right, Blue moves left
+            'radial-gradient(ellipse 50% 70% at 95% 50%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 5% 50%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
 
-            // UP/DOWN 2 DEPTH: Maximum depth with gentle sway - floating at bottom
-            'radial-gradient(ellipse 66% 86% at 1% 88%, rgba(255,82,112,0.79) 0%, transparent 77%), radial-gradient(ellipse 66% 86% at 99% 12%, rgba(112,182,227,0.79) 0%, transparent 77%), radial-gradient(ellipse 328% 170% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(246,249,255,0.95) 85%, transparent 100%)',
+            // Fourth breathing cycle (switched) - ALL THE WAY UP
+            'radial-gradient(ellipse 65% 90% at 95% 5%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 5% 95%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // UP/DOWN 2 RISE: Gentle ascent with wavy motion - surfacing gracefully
-            'radial-gradient(ellipse 60% 80% at 2% 72%, rgba(255,90,120,0.76) 0%, transparent 80%), radial-gradient(ellipse 60% 80% at 98% 28%, rgba(120,190,235,0.76) 0%, transparent 80%), radial-gradient(ellipse 322% 164% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(248,250,255,0.92) 82%, transparent 100%)',
+            // Fourth breathing cycle (switched) - ALL THE WAY DOWN
+            'radial-gradient(ellipse 65% 90% at 95% 95%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 5% 5%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // UP/DOWN 2 SETTLE: Flowing return with gentle orbital curve
-            'radial-gradient(ellipse 54% 74% at 4% 58%, rgba(255,98,128,0.73) 0%, transparent 82%), radial-gradient(ellipse 54% 74% at 96% 42%, rgba(128,198,243,0.73) 0%, transparent 82%), radial-gradient(ellipse 316% 159% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(249,250,255,0.90) 81%, transparent 100%)',
+            // Fifth breathing cycle (switched) - ALL THE WAY UP
+            'radial-gradient(ellipse 65% 90% at 95% 5%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 5% 95%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // SWITCH START: Red moves up and right, Blue moves down and left - smooth separation
-            'radial-gradient(ellipse 56% 76% at 25% 25%, rgba(255,100,130,0.72) 0%, transparent 83%), radial-gradient(ellipse 56% 76% at 75% 75%, rgba(130,200,245,0.72) 0%, transparent 83%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.94) 0%, rgba(249,251,255,0.89) 80%, transparent 100%)',
+            // Fifth breathing cycle (switched) - ALL THE WAY DOWN
+            'radial-gradient(ellipse 65% 90% at 95% 95%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 5% 5%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // SWITCH MID: Red above center, Blue below center - over/under positioning
-            'radial-gradient(ellipse 54% 74% at 50% 30%, rgba(255,105,135,0.71) 0%, transparent 84%), radial-gradient(ellipse 54% 74% at 50% 70%, rgba(135,206,250,0.71) 0%, transparent 84%), radial-gradient(ellipse 305% 152% at 50% 50%, rgba(255,255,255,0.93) 0%, rgba(249,250,255,0.88) 78%, transparent 100%)',
+            // Sixth breathing cycle (switched) - ALL THE WAY UP
+            'radial-gradient(ellipse 65% 90% at 95% 5%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 5% 95%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // SWITCH END: Red completes move to right and down, Blue to left and up
-            'radial-gradient(ellipse 56% 76% at 75% 60%, rgba(255,100,130,0.72) 0%, transparent 83%), radial-gradient(ellipse 56% 76% at 25% 40%, rgba(130,200,245,0.72) 0%, transparent 83%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.94) 0%, rgba(249,251,255,0.89) 80%, transparent 100%)',
+            // Sixth breathing cycle (switched) - ALL THE WAY DOWN
+            'radial-gradient(ellipse 65% 90% at 95% 95%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 5% 5%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // SWITCHED: Completed position switch - Red now right, Blue now left
-            'radial-gradient(ellipse 52% 72% at 95% 45%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 52% 72% at 5% 55%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.94) 0%, rgba(250,250,255,0.89) 79%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 1 FLOW: Gentle wave from new positions - Red drifts up-right, Blue flows down-left
-            'radial-gradient(ellipse 57% 77% at 97% 32%, rgba(255,98,128,0.73) 0%, transparent 83%), radial-gradient(ellipse 57% 77% at 3% 68%, rgba(128,198,243,0.73) 0%, transparent 83%), radial-gradient(ellipse 312% 157% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(249,251,255,0.91) 81%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 1 RISE: Floating higher with gentle orbital curve
-            'radial-gradient(ellipse 62% 82% at 98% 20%, rgba(255,90,120,0.76) 0%, transparent 80%), radial-gradient(ellipse 62% 82% at 2% 80%, rgba(120,190,235,0.76) 0%, transparent 80%), radial-gradient(ellipse 320% 165% at 50% 50%, rgba(255,255,255,0.97) 0%, rgba(248,250,255,0.93) 82%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 1 PEAK: Gentle peak with wavy drift - floating on water surface
-            'radial-gradient(ellipse 66% 86% at 99% 12%, rgba(255,85,115,0.78) 0%, transparent 78%), radial-gradient(ellipse 66% 86% at 1% 88%, rgba(115,185,230,0.78) 0%, transparent 78%), radial-gradient(ellipse 327% 169% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(247,249,255,0.94) 84%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 1 DRIFT: Gentle drift back with wavy current motion
-            'radial-gradient(ellipse 60% 80% at 98% 28%, rgba(255,92,122,0.75) 0%, transparent 81%), radial-gradient(ellipse 60% 80% at 2% 72%, rgba(122,192,237,0.75) 0%, transparent 81%), radial-gradient(ellipse 318% 162% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(248,250,255,0.92) 82%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 1 SETTLE: Flowing back with gentle orbital curve
-            'radial-gradient(ellipse 54% 74% at 96% 38%, rgba(255,100,130,0.72) 0%, transparent 83%), radial-gradient(ellipse 54% 74% at 4% 62%, rgba(130,200,245,0.72) 0%, transparent 83%), radial-gradient(ellipse 314% 158% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(249,250,255,0.90) 80%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 2 FLOW: Opposite wave - Red flows down-right, Blue drifts up-left
-            'radial-gradient(ellipse 58% 78% at 97% 68%, rgba(255,95,125,0.74) 0%, transparent 82%), radial-gradient(ellipse 58% 78% at 3% 32%, rgba(125,195,240,0.74) 0%, transparent 82%), radial-gradient(ellipse 316% 160% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(248,251,255,0.91) 81%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 2 SINK: Gentle descent with underwater current feel
-            'radial-gradient(ellipse 64% 84% at 98% 80%, rgba(255,88,118,0.77) 0%, transparent 79%), radial-gradient(ellipse 64% 84% at 2% 20%, rgba(118,188,232,0.77) 0%, transparent 79%), radial-gradient(ellipse 324% 167% at 50% 50%, rgba(255,255,255,0.97) 0%, rgba(247,250,255,0.93) 83%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 2 DEPTH: Maximum depth with gentle floating sway
-            'radial-gradient(ellipse 68% 88% at 99% 88%, rgba(255,82,112,0.79) 0%, transparent 77%), radial-gradient(ellipse 68% 88% at 1% 12%, rgba(112,182,227,0.79) 0%, transparent 77%), radial-gradient(ellipse 332% 172% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(246,249,255,0.95) 85%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 2 RISE: Graceful surfacing with wavy orbital motion
-            'radial-gradient(ellipse 62% 82% at 98% 72%, rgba(255,90,120,0.76) 0%, transparent 80%), radial-gradient(ellipse 62% 82% at 2% 28%, rgba(120,190,235,0.76) 0%, transparent 80%), radial-gradient(ellipse 326% 166% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(248,250,255,0.92) 82%, transparent 100%)',
-
-            // SWITCHED UP/DOWN 2 SETTLE: Flowing return to baseline with gentle curve
-            'radial-gradient(ellipse 56% 76% at 96% 58%, rgba(255,98,128,0.73) 0%, transparent 82%), radial-gradient(ellipse 56% 76% at 4% 42%, rgba(128,198,243,0.73) 0%, transparent 82%), radial-gradient(ellipse 320% 163% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(249,250,255,0.90) 81%, transparent 100%)',
-
-            // RETURN SWITCH START: Red moves down and left, Blue moves up and right - smooth separation
-            'radial-gradient(ellipse 58% 78% at 75% 60%, rgba(255,100,130,0.72) 0%, transparent 83%), radial-gradient(ellipse 58% 78% at 25% 40%, rgba(130,200,245,0.72) 0%, transparent 83%), radial-gradient(ellipse 315% 162% at 50% 50%, rgba(255,255,255,0.94) 0%, rgba(249,251,255,0.89) 81%, transparent 100%)',
-
-            // RETURN SWITCH MID: Red below center, Blue above center - over/under positioning
-            'radial-gradient(ellipse 56% 76% at 50% 70%, rgba(255,105,135,0.71) 0%, transparent 84%), radial-gradient(ellipse 56% 76% at 50% 30%, rgba(135,206,250,0.71) 0%, transparent 84%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.93) 0%, rgba(249,250,255,0.88) 80%, transparent 100%)',
-
-            // RETURN SWITCH END: Red completes move to left and up, Blue to right and down
-            'radial-gradient(ellipse 54% 74% at 25% 40%, rgba(255,100,130,0.72) 0%, transparent 83%), radial-gradient(ellipse 54% 74% at 75% 60%, rgba(130,200,245,0.72) 0%, transparent 83%), radial-gradient(ellipse 308% 156% at 50% 50%, rgba(255,255,255,0.94) 0%, rgba(249,250,255,0.90) 80%, transparent 100%)',
-
-            // RETURN TO START: Perfect loop back to beginning
-            'radial-gradient(ellipse 50% 70% at 5% 45%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 55%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
+            // RETURN TO START - Perfect loop
+            'radial-gradient(ellipse 50% 70% at 5% 50%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 50%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
           ],
         }}
         transition={{
-          duration: 17.0,
+          duration: 35.0,
           ease: 'linear',
           repeat: Infinity,
           repeatType: 'loop',
-          times: [
-            0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36, 0.4, 0.44, 0.48, 0.52, 0.56, 0.6, 0.64, 0.68, 0.72, 0.76, 0.8, 0.84, 0.88, 0.92, 0.96, 1.0,
-          ],
+          times: [0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.5, 0.57, 0.64, 0.71, 0.78, 0.85, 0.92, 1.0],
         }}
       />
 
