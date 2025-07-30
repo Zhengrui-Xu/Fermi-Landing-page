@@ -76,23 +76,23 @@ export default function Hero() {
         className="absolute inset-0"
         animate={{
           background: [
-            // White-dominant center with red far left top, blue far right bottom
-            'radial-gradient(ellipse 50% 70% at 5% 42%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 58%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
-            // Red moves up very slightly, blue moves down very slightly - breathing expansion with moderate spread
-            'radial-gradient(ellipse 65% 85% at 8% 35%, rgba(255,85,120,0.8) 0%, transparent 80%), radial-gradient(ellipse 65% 85% at 92% 65%, rgba(115,186,230,0.8) 0%, transparent 80%), radial-gradient(ellipse 320% 160% at 50% 50%, rgba(255,255,255,1) 0%, rgba(248,250,255,0.95) 85%, transparent 100%)',
-            // Peak breathing - red at top, blue at bottom, wider spread but controlled, strongest colors
-            'radial-gradient(ellipse 75% 95% at 10% 25%, rgba(255,65,105,0.9) 0%, transparent 75%), radial-gradient(ellipse 75% 95% at 90% 75%, rgba(95,166,210,0.9) 0%, transparent 75%), radial-gradient(ellipse 340% 170% at 50% 50%, rgba(255,255,255,1) 0%, rgba(245,248,255,1) 90%, transparent 100%)',
-            // Reverse direction - red moves down very slightly, blue moves up very slightly with moderate spread
-            'radial-gradient(ellipse 65% 85% at 7% 65%, rgba(255,120,150,0.6) 0%, transparent 82%), radial-gradient(ellipse 65% 85% at 93% 35%, rgba(140,195,240,0.6) 0%, transparent 82%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(250,252,255,0.92) 82%, transparent 100%)',
-            // Red at bottom, blue at top - gentle exhale with moderate spread
-            'radial-gradient(ellipse 70% 90% at 3% 75%, rgba(255,150,175,0.5) 0%, transparent 88%), radial-gradient(ellipse 70% 90% at 97% 25%, rgba(165,210,250,0.5) 0%, transparent 88%), radial-gradient(ellipse 290% 145% at 50% 50%, rgba(255,255,255,0.92) 0%, rgba(252,253,255,0.88) 78%, transparent 100%)',
-            // Return to start - red back to top, blue to bottom
-            'radial-gradient(ellipse 50% 70% at 5% 42%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 58%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
+            // Subtle colors - 50% of previous intensity
+            'linear-gradient(90deg, rgba(255,105,135,0.9) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.9) 100%)',
+            // First breathe - gentle increase
+            'linear-gradient(90deg, rgba(255,105,135,0.45) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.45) 100%)',
+            // Peak intensity
+            'linear-gradient(90deg, rgba(255,105,135,0.6) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.6) 100%)',
+            // Back to medium
+            'linear-gradient(90deg, rgba(255,105,135,0.4) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.4) 100%)',
+            // Gentle dip
+            'linear-gradient(90deg, rgba(255,105,135,0.25) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.25) 100%)',
+            // Back to start
+            'linear-gradient(90deg, rgba(255,105,135,0.9) 0%, rgba(255,255,255,1) 50%, rgba(135,206,250,0.9) 100%)',
           ],
         }}
         transition={{
-          duration: 5.5,
-          ease: [0.45, 0.05, 0.55, 0.95],
+          duration: 8,
+          ease: 'easeInOut',
           repeat: Infinity,
           repeatType: 'loop',
           times: [0, 0.2, 0.4, 0.6, 0.8, 1],
@@ -104,50 +104,50 @@ export default function Hero() {
           {/* Content */}
           <div className="text-center lg:text-left">
             <div className="hero-title">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight">
-                Lorem Ipsum
-                <span className="text-black block">Dolor Sit</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                Powering the
+                <span className="text-[#B31942] block">Future</span>
               </h1>
             </div>
 
             <div className="hero-subtitle mt-6">
-              <p className="text-xl md:text-2xl text-black font-light">
-                Consectetur Adipiscing Elit
+              <p className="text-xl md:text-2xl text-gray-700 font-light">
+                Revolutionary Energy Solutions
               </p>
             </div>
 
             <div className="hero-description mt-6">
-              <p className="text-lg text-black max-w-2xl mx-auto lg:mx-0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0">
+                Fermi Energy is pioneering breakthrough technologies in sustainable energy,
+                efficiency, and next-generation power systems that will transform how the world
+                thinks about energy.
               </p>
             </div>
 
             <div className="hero-buttons mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="group">
-                Lorem Ipsum
+                Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button variant="outline" size="lg" className="group">
                 <Play className="mr-2 h-4 w-4" />
-                Dolor Sit
+                Watch Demo
               </Button>
             </div>
 
             {/* Stats */}
             <div className="mt-16 grid grid-cols-3 gap-8 text-center lg:text-left">
               <div>
-                <div className="text-3xl font-bold text-[#0A3161]">123+</div>
-                <div className="text-sm text-gray-500">Lorem Ipsum</div>
+                <div className="text-3xl font-bold text-[#0A3161]">500+</div>
+                <div className="text-sm text-gray-500">Projects Completed</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#0A3161]">45.6%</div>
-                <div className="text-sm text-gray-500">Dolor Sit Amet</div>
+                <div className="text-3xl font-bold text-[#0A3161]">99.9%</div>
+                <div className="text-sm text-gray-500">Efficiency Rate</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#0A3161]">78/9</div>
-                <div className="text-sm text-gray-500">Consectetur Elit</div>
+                <div className="text-3xl font-bold text-[#0A3161]">24/7</div>
+                <div className="text-sm text-gray-500">Support Available</div>
               </div>
             </div>
           </div>
