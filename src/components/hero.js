@@ -82,7 +82,7 @@ export default function Hero() {
             // First breathing cycle - ALL THE WAY UP
             'radial-gradient(ellipse 65% 90% at 5% 5%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 95% 95%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
-            // First breathing cycle - ALL THE WAY DOWN  
+            // First breathing cycle - ALL THE WAY DOWN
             'radial-gradient(ellipse 65% 90% at 5% 95%, rgba(255,85,115,0.8) 0%, transparent 75%), radial-gradient(ellipse 65% 90% at 95% 5%, rgba(115,185,230,0.8) 0%, transparent 75%), radial-gradient(ellipse 330% 175% at 50% 50%, rgba(255,255,255,0.99) 0%, rgba(245,247,255,0.96) 88%, transparent 100%)',
 
             // Second breathing cycle - ALL THE WAY UP
@@ -127,7 +127,9 @@ export default function Hero() {
           ease: 'linear',
           repeat: Infinity,
           repeatType: 'loop',
-          times: [0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.5, 0.57, 0.64, 0.71, 0.78, 0.85, 0.92, 1.0],
+          times: [
+            0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.5, 0.57, 0.64, 0.71, 0.78, 0.85, 0.92, 1.0,
+          ],
         }}
       />
 
