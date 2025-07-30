@@ -76,26 +76,42 @@ export default function Hero() {
         className="absolute inset-0"
         animate={{
           background: [
-            // White-dominant center with red far left top, blue far right bottom
+            // PATTERN 1 START: Red top-left, blue bottom-right - classic position
             'radial-gradient(ellipse 50% 70% at 5% 42%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 58%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
-            // Red moves up very slightly, blue moves down very slightly - breathing expansion with moderate spread
-            'radial-gradient(ellipse 65% 85% at 8% 35%, rgba(255,85,120,0.8) 0%, transparent 80%), radial-gradient(ellipse 65% 85% at 92% 65%, rgba(115,186,230,0.8) 0%, transparent 80%), radial-gradient(ellipse 320% 160% at 50% 50%, rgba(255,255,255,1) 0%, rgba(248,250,255,0.95) 85%, transparent 100%)',
-            // Peak breathing - red at top, blue at bottom, wider spread but controlled, strongest colors
-            'radial-gradient(ellipse 75% 95% at 10% 25%, rgba(255,65,105,0.9) 0%, transparent 75%), radial-gradient(ellipse 75% 95% at 90% 75%, rgba(95,166,210,0.9) 0%, transparent 75%), radial-gradient(ellipse 340% 170% at 50% 50%, rgba(255,255,255,1) 0%, rgba(245,248,255,1) 90%, transparent 100%)',
-            // Reverse direction - red moves down very slightly, blue moves up very slightly with moderate spread
-            'radial-gradient(ellipse 65% 85% at 7% 65%, rgba(255,120,150,0.6) 0%, transparent 82%), radial-gradient(ellipse 65% 85% at 93% 35%, rgba(140,195,240,0.6) 0%, transparent 82%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(250,252,255,0.92) 82%, transparent 100%)',
-            // Red at bottom, blue at top - gentle exhale with moderate spread
-            'radial-gradient(ellipse 70% 90% at 3% 75%, rgba(255,150,175,0.5) 0%, transparent 88%), radial-gradient(ellipse 70% 90% at 97% 25%, rgba(165,210,250,0.5) 0%, transparent 88%), radial-gradient(ellipse 290% 145% at 50% 50%, rgba(255,255,255,0.92) 0%, rgba(252,253,255,0.88) 78%, transparent 100%)',
-            // Return to start - red back to top, blue to bottom
+            // Red breathes to full potential, blue stays moderate
+            'radial-gradient(ellipse 75% 95% at 10% 25%, rgba(255,65,105,0.9) 0%, transparent 75%), radial-gradient(ellipse 50% 70% at 95% 58%, rgba(115,186,230,0.8) 0%, transparent 80%), radial-gradient(ellipse 320% 160% at 50% 50%, rgba(255,255,255,1) 0%, rgba(248,250,255,0.95) 85%, transparent 100%)',
+            // Red moves down slightly, blue moves up slightly - gentle shift with size variation
+            'radial-gradient(ellipse 55% 80% at 7% 65%, rgba(255,120,150,0.6) 0%, transparent 82%), radial-gradient(ellipse 70% 85% at 93% 35%, rgba(140,195,240,0.6) 0%, transparent 82%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(250,252,255,0.92) 82%, transparent 100%)',
+            // Blue breathes to full potential, red moderate - opposite corner dominance
+            'radial-gradient(ellipse 50% 70% at 3% 75%, rgba(255,150,175,0.5) 0%, transparent 88%), radial-gradient(ellipse 80% 100% at 97% 25%, rgba(95,166,210,0.9) 0%, transparent 70%), radial-gradient(ellipse 330% 165% at 50% 50%, rgba(255,255,255,1) 0%, rgba(245,248,255,1) 88%, transparent 100%)',
+            // Both moderate, creating balanced center moment with subtle asymmetry
+            'radial-gradient(ellipse 60% 75% at 8% 50%, rgba(255,130,160,0.65) 0%, transparent 83%), radial-gradient(ellipse 65% 80% at 92% 50%, rgba(125,185,230,0.65) 0%, transparent 83%), radial-gradient(ellipse 305% 152% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(252,253,255,0.9) 81%, transparent 100%)',
+            // Return to start with slight variation - different ellipse proportions
+            'radial-gradient(ellipse 52% 72% at 6% 40%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 48% 68% at 94% 60%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 298% 148% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
+
+            // PATTERN 2 START: More complex breathing with multiple peaks
+            // Red moderate top-left, blue moderate bottom-right
+            'radial-gradient(ellipse 55% 75% at 8% 35%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 55% 75% at 92% 65%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
+            // Red reaches FULL POTENTIAL at top-left, blue moderate bottom-right
+            'radial-gradient(ellipse 80% 100% at 12% 20%, rgba(255,45,85,1.0) 0%, transparent 70%), radial-gradient(ellipse 60% 80% at 88% 70%, rgba(115,186,230,0.8) 0%, transparent 80%), radial-gradient(ellipse 320% 160% at 50% 50%, rgba(255,255,255,1) 0%, rgba(248,250,255,0.95) 85%, transparent 100%)',
+            // Red moves to center-right, blue moves to center-left - both moderate
+            'radial-gradient(ellipse 60% 80% at 75% 45%, rgba(255,120,150,0.6) 0%, transparent 82%), radial-gradient(ellipse 60% 80% at 25% 55%, rgba(140,195,240,0.6) 0%, transparent 82%), radial-gradient(ellipse 310% 155% at 50% 50%, rgba(255,255,255,0.98) 0%, rgba(250,252,255,0.92) 82%, transparent 100%)',
+            // Blue reaches FULL POTENTIAL at top-right, red moderate bottom-left
+            'radial-gradient(ellipse 60% 80% at 15% 75%, rgba(255,150,175,0.8) 0%, transparent 85%), radial-gradient(ellipse 80% 100% at 88% 25%, rgba(65,146,190,1.0) 0%, transparent 70%), radial-gradient(ellipse 330% 165% at 50% 50%, rgba(255,255,255,1) 0%, rgba(245,248,255,1) 88%, transparent 100%)',
+            // Red moves to bottom-right, blue to top-left - crossing paths with moderate intensity
+            'radial-gradient(ellipse 65% 85% at 85% 80%, rgba(255,85,120,0.7) 0%, transparent 80%), radial-gradient(ellipse 65% 85% at 15% 20%, rgba(115,186,230,0.7) 0%, transparent 80%), radial-gradient(ellipse 315% 158% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(248,252,255,0.9) 83%, transparent 100%)',
+            // Red reaches FULL POTENTIAL at bottom-right, blue moderate top-left
+            'radial-gradient(ellipse 80% 100% at 88% 85%, rgba(255,25,65,1.0) 0%, transparent 70%), radial-gradient(ellipse 60% 80% at 12% 15%, rgba(140,195,240,0.8) 0%, transparent 80%), radial-gradient(ellipse 325% 162% at 50% 50%, rgba(255,255,255,1) 0%, rgba(250,248,255,0.95) 86%, transparent 100%)',
+            // Return to moderate - preparing for loop restart
             'radial-gradient(ellipse 50% 70% at 5% 42%, rgba(255,105,135,0.7) 0%, transparent 85%), radial-gradient(ellipse 50% 70% at 95% 58%, rgba(135,206,250,0.7) 0%, transparent 85%), radial-gradient(ellipse 300% 150% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(250,250,255,0.9) 80%, transparent 100%)',
           ],
         }}
         transition={{
-          duration: 5.5,
-          ease: [0.45, 0.05, 0.55, 0.95],
+          duration: 15.5,
+          ease: [0.4, 0.0, 0.6, 1.0],
           repeat: Infinity,
           repeatType: 'loop',
-          times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+          times: [0, 0.08, 0.15, 0.23, 0.31, 0.38, 0.46, 0.54, 0.62, 0.69, 0.77, 0.85, 0.92, 1],
         }}
       />
 
