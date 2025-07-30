@@ -126,7 +126,7 @@ export default function MagicNavbar() {
               {/* Animated border background */}
               <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#B31942] via-purple-500 to-[#0A3161] opacity-75 animate-gradient-x group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#B31942] via-purple-500 to-[#0A3161] animate-gradient-x" />
-              
+
               <a
                 className="relative inline-flex items-center justify-center font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-white h-8 rounded-xl px-3 text-xs bg-black hover:bg-black/90 group-hover:scale-105"
                 href="#pricing"
