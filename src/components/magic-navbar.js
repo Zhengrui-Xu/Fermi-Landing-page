@@ -150,7 +150,7 @@ export default function MagicNavbar() {
                 <div className="h-10 w-10 relative">
                   <Image
                     src="/LogoFinal/ONLY LOGO svgs/Only_Logo_High.svg"
-                    alt="Fermi Energy"
+                    alt="Fermi Energy Logo"
                     width={40}
                     height={40}
                     className="h-full w-full object-contain"
