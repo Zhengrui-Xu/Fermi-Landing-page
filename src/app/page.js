@@ -1,11 +1,11 @@
-import Navbar from '@/components/navbar'
+import MagicNavbar from '@/components/magic-navbar'
 import Hero from '@/components/hero'
 import Section from '@/components/section'
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <MagicNavbar />
       <Hero />
 
       <Section id="about" className="bg-accent/5">
