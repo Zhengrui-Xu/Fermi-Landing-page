@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { RainbowButton } from '@/components/magicui/rainbow-button'
-import { BlurFade } from '@/components/magicui/blur-fade'
 import { useGSAP } from '@/hooks/useGSAP'
 
 export default function Hero() {
@@ -138,28 +137,22 @@ export default function Hero() {
         <div className="flex items-center justify-center min-h-[80vh]">
           {/* Centered Content */}
           <div className="text-center max-w-4xl">
-            <BlurFade delay={0.25} inView>
-              <div className="hero-title">
-                <h1 className="text-black leading-tight mb-6">Our mission</h1>
-              </div>
-            </BlurFade>
+            <div className="hero-title">
+              <h1 className="text-black leading-tight mb-6">Our mission</h1>
+            </div>
 
-            <BlurFade delay={0.5} inView>
-              <div className="hero-subtitle mt-6">
-                <p className="text-black font-light mb-10 text-xl md:text-2xl">
-                  Combat climate change with disruptive battery technologies
-                </p>
-              </div>
-            </BlurFade>
+            <div className="hero-subtitle mt-6">
+              <p className="text-black font-light mb-10 text-xl md:text-2xl">
+                Combat climate change with disruptive battery technologies
+              </p>
+            </div>
 
-            <BlurFade delay={0.75} inView>
-              <div className="hero-buttons mt-10">
-                <RainbowButton size="lg" className="group btn-text">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </RainbowButton>
-              </div>
-            </BlurFade>
+            <div className="hero-buttons mt-10">
+              <RainbowButton size="lg" className="group btn-text">
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </RainbowButton>
+            </div>
           </div>
         </div>
       </div>
