@@ -76,11 +76,11 @@ export default function MagicNavbar() {
 
         {/* Navigation Links - Right */}
         <div className="flex items-center space-x-8">
-          <nav className="hidden items-center space-x-8 text-base font-medium lg:flex">
+          <nav className="hidden items-center space-x-8 lg:flex">
             {navigation.map(item => (
               <a
                 key={item.name}
-                className="transition-colors hover:text-foreground/80 text-foreground/60 font-medium"
+                className="nav-link transition-colors hover:text-foreground/80 text-foreground/60"
                 href={item.href}
               >
                 {item.name}
@@ -166,7 +166,7 @@ export default function MagicNavbar() {
                 {navigation.map(item => (
                   <a
                     key={item.name}
-                    className="text-base font-medium transition-colors hover:text-foreground/80 text-foreground/60 py-2"
+                    className="nav-link transition-colors hover:text-foreground/80 text-foreground/60 py-2"
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
                   >

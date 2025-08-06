@@ -1,8 +1,18 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter, Montserrat } from 'next/font/google'
 import SmoothScrollProvider from '@/components/smooth-scroll-provider'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
 
 export const metadata = {
   title: 'Fermi Energy - Revolutionary Energy Solutions',
@@ -13,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${montserrat.variable} font-body`}>
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
