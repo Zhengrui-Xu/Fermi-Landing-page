@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Play } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { ArrowRight } from 'lucide-react'
+import { RainbowButton } from '@/components/magicui/rainbow-button'
 import { useGSAP } from '@/hooks/useGSAP'
 
 export default function Hero() {
@@ -134,70 +134,26 @@ export default function Hero() {
       />
 
       <div className="container mx-auto px-4 pt-20 pb-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="text-center lg:text-left">
+        <div className="flex items-center justify-center min-h-[80vh]">
+          {/* Centered Content */}
+          <div className="text-center max-w-4xl">
             <div className="hero-title">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight">
-                Lorem Ipsum
-                <span className="text-black block">Dolor Sit</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-6">
+                Our mission
               </h1>
             </div>
 
             <div className="hero-subtitle mt-6">
-              <p className="text-xl md:text-2xl text-black font-light">
-                Consectetur Adipiscing Elit
+              <p className="text-xl md:text-2xl text-black font-light mb-10">
+                Combat climate change with disruptive battery technologies
               </p>
             </div>
 
-            <div className="hero-description mt-6">
-              <p className="text-lg text-black max-w-2xl mx-auto lg:mx-0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-
-            <div className="hero-buttons mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="group">
-                Lorem Ipsum
+            <div className="hero-buttons mt-10">
+              <RainbowButton size="lg" className="group">
+                Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="outline" size="lg" className="group">
-                <Play className="mr-2 h-4 w-4" />
-                Dolor Sit
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="mt-16 grid grid-cols-3 gap-8 text-center lg:text-left">
-              <div>
-                <div className="text-3xl font-bold text-[#0A3161]">123+</div>
-                <div className="text-sm text-gray-500">Lorem Ipsum</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[#0A3161]">45.6%</div>
-                <div className="text-sm text-gray-500">Dolor Sit Amet</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[#0A3161]">78/9</div>
-                <div className="text-sm text-gray-500">Consectetur Elit</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Image/Visual */}
-          <div className="hero-image relative">
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
-              {/* Placeholder for hero image - replace with actual image */}
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#B31942]/8 to-[#0A3161]/8 border border-gray-200 flex items-center justify-center backdrop-blur-sm">
-                <div className="text-6xl text-[#0A3161]/30">⚡</div>
-              </div>
-
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#B31942]/8 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-[#0A3161]/8 rounded-full animate-pulse animation-delay-200"></div>
-              <div className="absolute top-1/2 -right-8 w-12 h-12 bg-[#B31942]/12 rounded-full animate-pulse animation-delay-500"></div>
+              </RainbowButton>
             </div>
           </div>
         </div>
