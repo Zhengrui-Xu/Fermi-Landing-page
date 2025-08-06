@@ -36,11 +36,11 @@ export default function MagicNavbar() {
     >
       <div
         className={cn(
-          'container flex items-center transition-all duration-500',
+          'container flex items-center justify-between transition-all duration-500',
           scrolled ? 'h-16' : 'h-28'
         )}
       >
-        {/* Logo Section */}
+        {/* Logo Section - Left */}
         <div className="flex">
           <a className="flex items-center space-x-4 py-1" href="/">
             <div
@@ -74,8 +74,8 @@ export default function MagicNavbar() {
           </a>
         </div>
 
-        {/* Centered Navigation */}
-        <div className="flex-1 flex justify-center">
+        {/* Navigation Links - Right */}
+        <div className="flex items-center space-x-8">
           <nav className="hidden items-center space-x-8 text-base font-medium lg:flex">
             {navigation.map(item => (
               <a
@@ -87,10 +87,8 @@ export default function MagicNavbar() {
               </a>
             ))}
           </nav>
-        </div>
 
-        {/* Right Side - Mobile Menu Button */}
-        <div className="flex">
+          {/* Mobile Menu Button */}
           <button
             className="inline-flex items-center justify-center rounded-xl font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-9 py-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
             type="button"
