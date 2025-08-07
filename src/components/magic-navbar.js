@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { RainbowButton } from '@/components/magicui/rainbow-button'
 
 export default function MagicNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,9 +18,10 @@ export default function MagicNavbar() {
   }, [])
 
   const navigation = [
+    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Technology', href: '#technology' },
+    { name: 'Team', href: '#team' },
+    { name: 'News', href: '#news' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -36,101 +36,95 @@ export default function MagicNavbar() {
     >
       <div
         className={cn(
-          'container flex items-center transition-all duration-500',
-          scrolled ? 'h-16' : 'h-24'
+          'container flex items-center justify-between transition-all duration-500',
+          scrolled ? 'h-16' : 'h-28'
         )}
       >
-        {/* Logo Section */}
-        <div className="mr-6 flex">
+        {/* Logo Section - Left */}
+        <div className="flex">
           <a className="flex items-center space-x-4 py-1" href="/">
             <div
               className={cn(
                 'relative transition-all duration-500',
-                scrolled ? 'h-10 w-10' : 'h-20 w-20'
+                scrolled ? 'h-12 w-12' : 'h-24 w-24'
               )}
             >
               <Image
                 src="/LogoFinal/ONLY LOGO svgs/Only_Logo_High.svg"
                 alt="Fermi Energy Logo"
-                width={80}
-                height={80}
+                width={96}
+                height={96}
                 className="h-full w-full object-contain"
               />
             </div>
             <div
               className={cn(
                 'relative transition-all duration-500',
-                scrolled ? 'h-8 w-auto' : 'h-16 w-auto'
+                scrolled ? 'h-10 w-auto' : 'h-20 w-auto'
               )}
             >
               <Image
                 src="/LogoFinal/TextLogo/text_logo_mid.svg"
                 alt="Fermi Energy"
-                width={320}
-                height={64}
+                width={400}
+                height={80}
                 className="h-full w-auto object-contain"
               />
             </div>
           </a>
-          <nav className="hidden items-center space-x-8 text-base font-medium lg:flex ml-12">
+        </div>
+
+        {/* Navigation Links - Right */}
+        <div className="flex items-center space-x-8">
+          <nav className="hidden items-center space-x-8 lg:flex">
             {navigation.map(item => (
               <a
                 key={item.name}
-                className="transition-colors hover:text-foreground/80 text-foreground/60 font-medium"
+                className="nav-link transition-colors hover:text-foreground/80 text-foreground/60"
                 href={item.href}
               >
                 {item.name}
               </a>
             ))}
           </nav>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="inline-flex items-center justify-center rounded-xl font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-9 py-2 mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-          type="button"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <svg
-            strokeWidth="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+          {/* Mobile Menu Button */}
+          <button
+            className="inline-flex items-center justify-center rounded-xl font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-9 py-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
+            type="button"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <path
-              d="M3 5H11"
-              stroke="currentColor"
+            <svg
               strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M3 12H16"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M3 19H21"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className="sr-only">Toggle Menu</span>
-        </button>
-
-        {/* Right Side - Actions */}
-        <div className="flex flex-1 items-center justify-end">
-          {/* Rainbow CTA Button */}
-          <RainbowButton className="text-base font-medium px-6 py-2">
-            <a href="#contact" className="text-white">
-              Request a proposal
-            </a>
-          </RainbowButton>
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+            >
+              <path
+                d="M3 5H11"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3 12H16"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3 19H21"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="sr-only">Toggle Menu</span>
+          </button>
         </div>
       </div>
 
@@ -168,11 +162,11 @@ export default function MagicNavbar() {
               </div>
 
               {/* Mobile Navigation */}
-              <nav className="flex flex-col space-y-4 mb-6">
+              <nav className="flex flex-col space-y-4">
                 {navigation.map(item => (
                   <a
                     key={item.name}
-                    className="text-base font-medium transition-colors hover:text-foreground/80 text-foreground/60 py-2"
+                    className="nav-link transition-colors hover:text-foreground/80 text-foreground/60 py-2"
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -180,13 +174,6 @@ export default function MagicNavbar() {
                   </a>
                 ))}
               </nav>
-
-              {/* Mobile CTA */}
-              <RainbowButton className="text-base font-medium px-6 py-3 w-full">
-                <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-white">
-                  Request a proposal
-                </a>
-              </RainbowButton>
             </div>
           </motion.div>
         )}
