@@ -1,6 +1,7 @@
 import MagicNavbar from '@/components/magic-navbar'
 import Hero from '@/components/hero'
 import Section from '@/components/section'
+import { ContactSection } from '@/components/contact-section'
 
 export default function Home() {
   return (
@@ -38,14 +39,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="contact">
-        <div className="text-center">
-          <h2 className="text-foreground mb-6">Contact Us</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            Ready to power your future? Get in touch with our team of energy experts.
-          </p>
-        </div>
-      </Section>
+      <ContactSection />
     </>
   )
 }

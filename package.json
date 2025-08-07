@@ -11,7 +11,10 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2",
+    "@hookform/resolvers": "^5.2.1",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
@@ -22,7 +25,9 @@
     "react": "^18",
     "react-dom": "^18",
     "react-gradient-animation": "^1.0.9",
-    "tailwind-merge": "^2.4.0"
+    "react-hook-form": "^7.62.0",
+    "tailwind-merge": "^2.4.0",
+    "zod": "^4.0.15"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
