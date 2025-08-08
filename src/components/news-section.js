@@ -10,7 +10,7 @@ export const NewsSection = () => {
       <div className="bg-fermi-gradient py-24 px-6 text-[#124f99]">
         <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-start pl-4 text-left">
           <div className="pb-4">
-          <h1 className="text-[24px] sm:text-[40px] md:text-[52px] font-bold uppercase tracking-tight font-montserrat leading-tight text-center sm:text-left">
+            <h1 className="text-[24px] sm:text-[40px] md:text-[52px] font-bold uppercase tracking-tight font-montserrat leading-tight text-center sm:text-left">
               Latest At Fermi Energy
             </h1>
             <p className="italic text-[20px] font-inter text-[#3C83AC] leading-relaxed mt-0">
