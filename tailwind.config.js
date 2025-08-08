@@ -21,6 +21,9 @@ module.exports = {
         heading: ['var(--font-heading)', 'Montserrat', 'sans-serif'],
         body: ['var(--font-body)', 'Inter', 'sans-serif'],
       },
+      backgroundImage: {
+        'fermi-gradient': 'linear-gradient(90deg, #E8F3FD 0%, #F3F1FB 13%, #F9E7F7 26%, #C3E1FE 50%, #D1DCFB 58%, #E3E9FC 65%, #FBFCFF 100%)',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
