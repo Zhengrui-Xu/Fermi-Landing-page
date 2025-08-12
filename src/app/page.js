@@ -1,6 +1,7 @@
 import MagicNavbar from '@/components/magic-navbar'
 import Hero from '@/components/hero'
 import Section from '@/components/section'
+import ProblemsParallax from '@/components/problems-parallax'
 import { ContactSection } from '@/components/contact-section'
 import { NewsSection } from '@/components/news-section'
 
@@ -29,6 +30,8 @@ export default function Home() {
           </p>
         </div>
       </Section>
+
+      <ProblemsParallax />
 
       {/* <Section id="news" className="bg-accent/5">
         <div className="text-center">
