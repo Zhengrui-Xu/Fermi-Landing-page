@@ -30,6 +30,25 @@
     --color-4: oklch(80.2% 0.134 225);
     --color-5: oklch(90.7% 0.231 133);
 
+    /* US Flag Theme Colors */
+    --us-flag-red: #b31942;
+    --us-flag-blue: #0a3161;
+    --us-flag-white: #ffffff;
+
+    /* Enhanced Color Palette from Design */
+    --burnt-umber: #a02d09;
+    --redwood: #b02629;
+    --macadamia: #f9f08;
+    --cool-blue: #173047;
+    --light-grayish: #799b9;
+
+    /* Chart Colors for shadcn/ui */
+    --chart-1: #0a3161;
+    --chart-2: #b31942;
+    --chart-3: #ffffff;
+    --chart-4: #22c55e;
+    --chart-5: #eab308;
+
     /* Typography Variables */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
