@@ -150,7 +150,7 @@ export default function Hero() {
             <div className="hero-buttons mt-10">
               <Button
                 size="lg"
-                className="group bg-us-flag-blue hover:bg-us-flag-red text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="group btn-text bg-us-flag-blue hover:bg-us-flag-red text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
