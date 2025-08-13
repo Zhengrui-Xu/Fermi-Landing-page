@@ -65,6 +65,10 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        // US Flag colors for Fermi Energy branding
+        'us-flag-red': '#B31942',
+        'us-flag-blue': '#0A3161',
+        'us-flag-white': '#FFFFFF',
       },
       borderRadius: {
         lg: 'var(--radius)',
