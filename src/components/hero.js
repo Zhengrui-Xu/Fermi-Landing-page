@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import { RainbowButton } from '@/components/magicui/rainbow-button'
+import { Button } from '@/components/ui/button'
 import { useGSAP } from '@/hooks/useGSAP'
 
 export default function Hero() {
@@ -148,10 +148,13 @@ export default function Hero() {
             </div>
 
             <div className="hero-buttons mt-10">
-              <RainbowButton size="lg" className="group btn-text">
+              <Button
+                size="lg"
+                className="group btn-text bg-us-flag-blue hover:bg-us-flag-red text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </RainbowButton>
+              </Button>
             </div>
           </div>
         </div>
