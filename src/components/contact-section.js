@@ -85,48 +85,39 @@ export const ContactSection = () => {
                   </div>
                 </div>
                 <div className="font-body" style={{ color: '#000000' }}>
-                  1872 Pratt Drive, Suite 1205
-                  <br />
-                  Blacksburg, VA 24060
+                  <div className="mb-2">
+                    <strong>Headquarter:</strong>
+                    <br />
+                    120 Hawley Street,
+                    <br />
+                    Binghamton, NY 13901
+                  </div>
+                  <div>
+                    <strong>R&D facility:</strong>
+                    <br />
+                    1872 Pratt Drive, Suite 1205
+                    <br />
+                    Blacksburg, VA 24060
+                  </div>
                 </div>
               </div>
 
               <div>
                 <div className="flex gap-2 mb-1">
-                  <Phone style={{ color: '#B31942' }} />
+                  <Building2 style={{ color: '#B31942' }} />
                   <div className="font-bold font-heading" style={{ color: '#000000' }}>
-                    Call us
+                    LinkedIn
                   </div>
                 </div>
                 <div className="font-body" style={{ color: '#000000' }}>
-                  Contact for phone number
-                </div>
-              </div>
-
-              <div>
-                <div className="flex gap-2 mb-1">
-                  <Mail style={{ color: '#B31942' }} />
-                  <div className="font-bold font-heading" style={{ color: '#000000' }}>
-                    Mail Us
-                  </div>
-                </div>
-                <div className="font-body" style={{ color: '#000000' }}>
-                  fenglin@fermienergy.com
-                  <br />
-                  rayxu@fermienergy.com
-                </div>
-              </div>
-
-              <div>
-                <div className="flex gap-2">
-                  <Clock style={{ color: '#B31942' }} />
-                  <div className="font-bold font-heading" style={{ color: '#000000' }}>
-                    Visit us
-                  </div>
-                </div>
-                <div className="font-body" style={{ color: '#000000' }}>
-                  <div>Monday - Friday</div>
-                  <div>8 AM - 4 PM</div>
+                  <a
+                    href="https://www.linkedin.com/company/fermienergy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
+                    https://www.linkedin.com/company/fermienergy
+                  </a>
                 </div>
               </div>
             </div>
