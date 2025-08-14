@@ -31,7 +31,7 @@ const OurProductsParallax = () => {
       subtitle: "Fermi Energy's Gen-1 CAM",
       description:
         'Cuts energy use by 70% with proprietary low-temp calcination. Validated drop-in solutions for NMC & NCA chemistries. Delivers high energy density and long cycle life. Supports a secure domestic feedstock supply chain.',
-      image: '/LogoFinal/OurProducts/Gen1.jpg',
+      image: '/LogoFinal/OurProducts/Gen1After.png',
       features: [
         'Cuts energy use by 70% with proprietary low-temp calcination',
         'Validated drop-in solutions for NMC & NCA chemistries',
@@ -47,7 +47,7 @@ const OurProductsParallax = () => {
       subtitle: "Fermi Energy's Gen-2 CAM",
       description:
         'Cuts CAM cost by 50% using abundant Mn & Fe. Enables ultra-fast charging. Performs reliably across a wide temperature range. Built on a secure domestic feedstock supply chain.',
-      image: '/LogoFinal/OurProducts/Gen2.jpg',
+      image: '/LogoFinal/OurProducts/Gen2After.png',
       features: [
         'Cuts CAM cost by 50% using abundant Mn & Fe',
         'Enables ultra-fast charging',
@@ -66,119 +66,226 @@ const OurProductsParallax = () => {
 
     if (!container || sections.length === 0) return
 
+    // Check if device is mobile or tablet
+    const isMobileOrTablet = window.innerWidth <= 1024
+
     // Set initial positions
     gsap.set(sections, { x: '100%', opacity: 0 })
     gsap.set(sections[0], { x: '0%', opacity: 1 })
 
-    // Create the horizontal scroll animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        snap: {
-          snapTo: 'labels',
-          duration: { min: 0.2, max: 3 },
-          delay: 0.2,
-          ease: 'power1.inOut',
-        },
-      },
-    })
+    if (isMobileOrTablet) {
+      // Auto-slide for mobile and tablets every 5 seconds
+      let currentIndex = 0
+      const autoSlide = setInterval(() => {
+        // Hide current section
+        gsap.to(sections[currentIndex], {
+          x: '-100%',
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.inOut',
+        })
 
-    // Title animation
-    tl.from(
-      title,
-      {
-        y: 50,
-        opacity: 0,
-        duration: 0.5,
-      },
-      0
-    )
+        // Move to next section
+        currentIndex = (currentIndex + 1) % sections.length
 
-    // Animate through each section
-    sections.forEach((section, index) => {
-      if (index === 0) return // Skip first section as it's already visible
-
-      const label = `section${index}`
-
-      tl.addLabel(label)
-        .to(
-          sections[index - 1],
-          {
-            x: '-100%',
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.inOut',
-          },
-          label
-        )
-        .fromTo(
-          sections[index],
-          {
-            x: '100%',
-            opacity: 0,
-          },
+        // Show next section
+        gsap.fromTo(
+          sections[currentIndex],
+          { x: '100%', opacity: 0 },
           {
             x: '0%',
             opacity: 1,
-            duration: 1,
+            duration: 0.8,
+            ease: 'power2.inOut',
+          }
+        )
+      }, 5000)
+
+      return () => {
+        clearInterval(autoSlide)
+      }
+    } else {
+      // Original scroll-based animation for desktop with improved smoothness
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.8, // Smoother scrubbing
+          pin: true,
+          anticipatePin: 1,
+          snap: {
+            snapTo: 'labels',
+            duration: { min: 0.3, max: 1.5 }, // Faster snapping
+            delay: 0.1,
             ease: 'power2.inOut',
           },
-          label
-        )
-    })
-
-    // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.trigger === container) {
-          trigger.kill()
-        }
+        },
       })
+
+      // Remove title animation to keep it static
+      // Title will remain static and not be affected by scroll animations
+
+      // Animate through each section with improved timing
+      sections.forEach((section, index) => {
+        if (index === 0) return // Skip first section as it's already visible
+
+        const label = `section${index}`
+
+        tl.addLabel(label)
+          .to(
+            sections[index - 1],
+            {
+              x: '-100%',
+              opacity: 0,
+              duration: 0.8, // Faster transitions
+              ease: 'power2.inOut',
+            },
+            label
+          )
+          .fromTo(
+            sections[index],
+            {
+              x: '100%',
+              opacity: 0,
+            },
+            {
+              x: '0%',
+              opacity: 1,
+              duration: 0.8, // Faster transitions
+              ease: 'power2.inOut',
+            },
+            label
+          )
+      })
+
+      // Cleanup
+      return () => {
+        ScrollTrigger.getAll().forEach(trigger => {
+          if (trigger.trigger === container) {
+            trigger.kill()
+          }
+        })
+      }
     }
   }, [])
 
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden">
       {/* Clean Gradient Background */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-50 via-white to-gray-100" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
 
-      {/* Subtle Molecular Pattern Overlay */}
-      <div
-        className="absolute inset-0 z-5 opacity-5"
-        style={{
-          backgroundImage: 'url(/LogoFinal/OurProducts/background.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+      {/* Molecular Pattern Background */}
+      <div className="absolute inset-0 z-5 opacity-40">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1200 800"
+          className="w-full h-full"
+          style={{ filter: 'blur(1px)' }}
+        >
+          <defs>
+            {/* Molecule definitions with animation colors */}
+            <circle id="atom-red" r="3" fill="rgba(179,25,66,0.3)" />
+            <circle id="atom-blue" r="3" fill="rgba(10,49,97,0.3)" />
+            <circle id="atom-light" r="2" fill="rgba(179,25,66,0.15)" />
+            <circle id="bond" r="1" fill="rgba(10,49,97,0.2)" />
+          </defs>
 
-      {/* Subtle Red/Blue Animation Overlay with Very Low Opacity */}
+          {/* Molecular structure pattern */}
+          <g opacity="0.6">
+            {/* Molecule 1 */}
+            <g transform="translate(100,150)">
+              <use href="#atom-red" x="0" y="0" />
+              <use href="#atom-blue" x="30" y="20" />
+              <use href="#atom-light" x="60" y="0" />
+              <line x1="0" y1="0" x2="30" y2="20" stroke="rgba(10,49,97,0.2)" strokeWidth="1" />
+              <line x1="30" y1="20" x2="60" y2="0" stroke="rgba(179,25,66,0.2)" strokeWidth="1" />
+            </g>
+
+            {/* Molecule 2 */}
+            <g transform="translate(300,300)">
+              <use href="#atom-blue" x="0" y="0" />
+              <use href="#atom-red" x="40" y="30" />
+              <use href="#atom-light" x="20" y="60" />
+              <line x1="0" y1="0" x2="40" y2="30" stroke="rgba(179,25,66,0.2)" strokeWidth="1" />
+              <line x1="40" y1="30" x2="20" y2="60" stroke="rgba(10,49,97,0.2)" strokeWidth="1" />
+            </g>
+
+            {/* Molecule 3 */}
+            <g transform="translate(600,100)">
+              <use href="#atom-red" x="0" y="0" />
+              <use href="#atom-blue" x="25" y="40" />
+              <use href="#atom-light" x="50" y="20" />
+              <use href="#atom-red" x="75" y="50" />
+              <line x1="0" y1="0" x2="25" y2="40" stroke="rgba(10,49,97,0.2)" strokeWidth="1" />
+              <line x1="25" y1="40" x2="50" y2="20" stroke="rgba(179,25,66,0.2)" strokeWidth="1" />
+              <line x1="50" y1="20" x2="75" y2="50" stroke="rgba(10,49,97,0.2)" strokeWidth="1" />
+            </g>
+
+            {/* Molecule 4 */}
+            <g transform="translate(900,250)">
+              <use href="#atom-blue" x="0" y="0" />
+              <use href="#atom-light" x="35" y="25" />
+              <use href="#atom-red" x="70" y="10" />
+              <line x1="0" y1="0" x2="35" y2="25" stroke="rgba(179,25,66,0.2)" strokeWidth="1" />
+              <line x1="35" y1="25" x2="70" y2="10" stroke="rgba(10,49,97,0.2)" strokeWidth="1" />
+            </g>
+
+            {/* Additional scattered molecules */}
+            <g transform="translate(200,500)">
+              <use href="#atom-red" x="0" y="0" />
+              <use href="#atom-blue" x="20" y="30" />
+              <line x1="0" y1="0" x2="20" y2="30" stroke="rgba(179,25,66,0.15)" strokeWidth="1" />
+            </g>
+
+            <g transform="translate(500,450)">
+              <use href="#atom-blue" x="0" y="0" />
+              <use href="#atom-light" x="30" y="15" />
+              <use href="#atom-red" x="60" y="30" />
+              <line x1="0" y1="0" x2="30" y2="15" stroke="rgba(10,49,97,0.15)" strokeWidth="1" />
+              <line x1="30" y1="15" x2="60" y2="30" stroke="rgba(179,25,66,0.15)" strokeWidth="1" />
+            </g>
+
+            <g transform="translate(800,400)">
+              <use href="#atom-red" x="0" y="0" />
+              <use href="#atom-blue" x="40" y="20" />
+              <line x1="0" y1="0" x2="40" y2="20" stroke="rgba(10,49,97,0.15)" strokeWidth="1" />
+            </g>
+
+            <g transform="translate(150,700)">
+              <use href="#atom-blue" x="0" y="0" />
+              <use href="#atom-light" x="25" y="35" />
+              <use href="#atom-red" x="50" y="10" />
+              <line x1="0" y1="0" x2="25" y2="35" stroke="rgba(179,25,66,0.15)" strokeWidth="1" />
+              <line x1="25" y1="35" x2="50" y2="10" stroke="rgba(10,49,97,0.15)" strokeWidth="1" />
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      {/* Enhanced Red/Blue Animation Overlay - Below Content */}
       <motion.div
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-12"
         animate={{
           background: [
-            'radial-gradient(ellipse 51% 71% at 4% 47%, rgba(179,25,66,0.03) 0%, transparent 85%), radial-gradient(ellipse 49% 69% at 96% 53%, rgba(10,49,97,0.03) 0%, transparent 85%)',
-            'radial-gradient(ellipse 49% 69% at 96% 53%, rgba(179,25,66,0.03) 0%, transparent 85%), radial-gradient(ellipse 51% 71% at 4% 47%, rgba(10,49,97,0.03) 0%, transparent 85%)',
-            'radial-gradient(ellipse 51% 71% at 4% 47%, rgba(179,25,66,0.03) 0%, transparent 85%), radial-gradient(ellipse 49% 69% at 96% 53%, rgba(10,49,97,0.03) 0%, transparent 85%)',
+            'radial-gradient(circle 60% 80% at 20% 20%, rgba(179,25,66,0.20) 0%, transparent 60%), radial-gradient(circle 70% 60% at 80% 80%, rgba(10,49,97,0.18) 0%, transparent 65%), radial-gradient(ellipse 40% 50% at 50% 10%, rgba(179,25,66,0.12) 0%, transparent 50%)',
+            'radial-gradient(circle 50% 70% at 80% 30%, rgba(10,49,97,0.20) 0%, transparent 60%), radial-gradient(circle 80% 50% at 10% 70%, rgba(179,25,66,0.18) 0%, transparent 65%), radial-gradient(ellipse 60% 40% at 50% 90%, rgba(10,49,97,0.12) 0%, transparent 50%)',
+            'radial-gradient(circle 70% 60% at 50% 80%, rgba(179,25,66,0.19) 0%, transparent 55%), radial-gradient(circle 60% 80% at 30% 20%, rgba(10,49,97,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 90% 50%, rgba(179,25,66,0.10) 0%, transparent 45%)',
+            'radial-gradient(circle 80% 50% at 10% 60%, rgba(10,49,97,0.22) 0%, transparent 65%), radial-gradient(circle 50% 70% at 90% 40%, rgba(179,25,66,0.19) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 20% 80%, rgba(10,49,97,0.14) 0%, transparent 55%)',
           ],
         }}
         transition={{
-          duration: 20.0,
+          duration: 8.0,
           ease: 'easeInOut',
           repeat: Infinity,
-          repeatType: 'loop',
+          repeatType: 'reverse',
         }}
       />
 
-      {/* Section Title */}
-      <div className="absolute top-16 left-0 right-0 z-20">
-        <div ref={titleRef} className="text-center">
+      {/* Section Title - Static and always visible */}
+      <div className="absolute top-16 left-0 right-0 z-30 pointer-events-none">
+        <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-2 text-gray-900">Our Products</h1>
           <p className="text-lg md:text-xl font-medium text-gray-700">
             Advanced cathode active materials powering the future of energy storage
@@ -198,9 +305,9 @@ const OurProductsParallax = () => {
           >
             <div className="max-w-6xl mx-auto w-full">
               {/* Main content grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 h-full items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 h-full items-center">
                 {/* Left side: Content */}
-                <div className="space-y-8 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
+                <div className="space-y-6 bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-2xl border border-white/30">
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
                       <div
@@ -239,55 +346,25 @@ const OurProductsParallax = () => {
                 </div>
 
                 {/* Right side: Product Image */}
-                <div className="h-full min-h-[400px] flex items-center">
-                  <div className="w-full rounded-2xl overflow-hidden shadow-2xl bg-white border border-gray-200">
+                <div className="h-full min-h-[350px] md:min-h-[400px] flex items-center justify-center">
+                  <div className="w-full aspect-[4/3] max-w-[450px] md:max-w-[500px] mx-auto rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 transition-transform duration-300 hover:scale-105">
                     <Image
                       src={product.image}
                       alt={product.title}
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-contain p-4"
-                      style={{ minHeight: '400px' }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Page indicator */}
-              <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
-                <div className="flex justify-center space-x-3">
-                  {productsData.map((_, idx) => (
-                    <div
-                      key={idx}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                        idx === index ? 'scale-125 shadow-lg' : 'opacity-50'
-                      }`}
+                      width={500}
+                      height={375}
+                      className="w-full h-full object-contain p-4 md:p-6"
                       style={{
-                        backgroundColor: idx === index ? colors.oldGloryRed : colors.white,
+                        minHeight: '350px',
+                        maxHeight: '375px',
                       }}
                     />
-                  ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="flex flex-col items-center text-gray-700 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2">
-          <span className="text-xs mb-2 opacity-70">Scroll to explore products</span>
-          <div
-            className="w-5 h-8 border-2 rounded-full flex justify-center"
-            style={{ borderColor: colors.oldGloryRed }}
-          >
-            <div
-              className="w-1 h-2 rounded-full mt-1 animate-bounce"
-              style={{ backgroundColor: colors.oldGloryRed }}
-            />
-          </div>
-        </div>
       </div>
     </section>
   )
