@@ -96,7 +96,6 @@ const OurProductsParallax = () => {
         // Dynamically import GSAP only on desktop
         const { gsap } = await import('gsap')
         const { ScrollTrigger } = await import('gsap/ScrollTrigger')
-        
         // Register plugin
         gsap.registerPlugin(ScrollTrigger)
 
