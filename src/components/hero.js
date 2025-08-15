@@ -136,14 +136,20 @@ export default function Hero() {
       <div className="container mx-auto px-4 pt-20 pb-16 relative z-10">
         <div className="flex items-center justify-center min-h-[80vh]">
           {/* Centered Content */}
-          <div className="text-center max-w-4xl">
+          <div className="text-center max-w-6xl">
             <div className="hero-title">
-              <h1 className="text-black leading-tight mb-6">Our mission</h1>
+              <h1 className="text-black leading-tight mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold">
+                <div>High-Performance Cathode Active Materials</div>
+                <div>
+                  Built in the <span className="font-extrabold">USA</span> for Tomorrow&apos;s
+                  Batteries
+                </div>
+              </h1>
             </div>
 
             <div className="hero-subtitle mt-6">
-              <p className="text-black font-light mb-10 text-xl md:text-2xl">
-                Combat climate change with disruptive battery technologies
+              <p className="text-black font-light mb-10 text-2xl md:text-3xl lg:text-4xl">
+                Explore Our Breakthroughs
               </p>
             </div>
 
@@ -157,13 +163,6 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-400 rounded-full animate-bounce mt-2"></div>
         </div>
       </div>
     </section>
