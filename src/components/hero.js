@@ -138,27 +138,25 @@ export default function Hero() {
           {/* Centered Content */}
           <div className="text-center max-w-6xl">
             <div className="hero-title">
-              <h1 className="text-black leading-tight mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold">
-                <div>High-Performance Cathode Active Materials</div>
-                <div>
-                  Built in the <span className="font-extrabold">USA</span> for Tomorrow&apos;s
-                  Batteries
+              <h1 className="text-black font-light leading-relaxed mb-8 text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl">
+                <div className="mb-4 whitespace-nowrap">
+                  High-Performance Cathode Active Materials
+                </div>
+                <div className="whitespace-nowrap">
+                  Built in the USA for Tomorrow&apos;s Batteries
                 </div>
               </h1>
             </div>
 
-            <div className="hero-subtitle mt-6">
-              <p className="text-black font-light mb-10 text-2xl md:text-3xl lg:text-4xl">
-                Explore Our Breakthroughs
-              </p>
-            </div>
-
-            <div className="hero-buttons mt-10">
+            <div className="hero-buttons mt-16">
               <Button
                 size="lg"
                 className="group btn-text bg-us-flag-blue hover:bg-us-flag-red text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                onClick={() => {
+                  document.getElementById('technology')?.scrollIntoView({ behavior: 'smooth' })
+                }}
               >
-                Get Started
+                Explore Our Breakthrough
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
