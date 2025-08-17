@@ -138,7 +138,7 @@ export default function Hero() {
           {/* Centered Content */}
           <div className="text-center max-w-6xl">
             <div className="hero-title">
-              <h1 className="text-black font-light leading-relaxed mb-8 text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl">
+              <h1 className="text-black font-medium leading-relaxed mb-8 text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl normal-case">
                 <div className="mb-4 whitespace-nowrap">
                   High-Performance Cathode Active Materials
                 </div>
