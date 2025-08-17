@@ -136,28 +136,24 @@ export default function Hero() {
       <div className="container mx-auto px-4 pt-20 pb-16 relative z-10">
         <div className="flex items-center justify-center min-h-[80vh]">
           {/* Centered Content */}
-          <div className="text-center max-w-6xl">
+          <div className="text-center max-w-6xl px-2">
             <div className="hero-title">
-              <h1 className="text-black font-medium leading-relaxed mb-8 text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl normal-case">
-                <div className="mb-4 whitespace-nowrap">
-                  High-Performance Cathode Active Materials
-                </div>
-                <div className="whitespace-nowrap">
-                  Built in the USA for Tomorrow&apos;s Batteries
-                </div>
+              <h1 className="text-black font-medium leading-relaxed mb-8 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl normal-case">
+                <div className="mb-4">High-Performance Cathode Active Materials</div>
+                <div>Built in the USA for Tomorrow&apos;s Batteries</div>
               </h1>
             </div>
 
-            <div className="hero-buttons mt-16">
+            <div className="hero-buttons mt-8 md:mt-16">
               <Button
-                size="lg"
-                className="group btn-text bg-us-flag-blue hover:bg-us-flag-red text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                size="default"
+                className="group btn-text bg-us-flag-blue hover:bg-us-flag-red text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3 text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 onClick={() => {
                   document.getElementById('technology')?.scrollIntoView({ behavior: 'smooth' })
                 }}
               >
                 Explore Our Breakthrough
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </div>
