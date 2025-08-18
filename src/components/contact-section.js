@@ -39,7 +39,7 @@ export const ContactSection = () => {
       firstName: '',
       lastName: '',
       email: '',
-      subject: 'Battery Technology',
+      subject: 'Product Purchase Inquiry',
       message: '',
     },
   })
@@ -95,7 +95,7 @@ export const ContactSection = () => {
                   <div>
                     <strong>R&D facility:</strong>
                     <br />
-                    1872 Pratt Drive, Suite 1205
+                    1872 Pratt Drive
                     <br />
                     Blacksburg, VA 24060
                   </div>
@@ -211,14 +211,26 @@ export const ContactSection = () => {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent className="bg-white border-gray-200">
-                              <SelectItem value="Battery Technology" className="hover:bg-gray-100">
-                                Battery Technology
+                              <SelectItem
+                                value="Product Purchase Inquiry"
+                                className="hover:bg-gray-100"
+                              >
+                                Product Purchase Inquiry
                               </SelectItem>
-                              <SelectItem value="Quantum Engineering" className="hover:bg-gray-100">
-                                Quantum Engineering
+                              <SelectItem value="Request for Samples" className="hover:bg-gray-100">
+                                Request for Samples
                               </SelectItem>
-                              <SelectItem value="Materials Science" className="hover:bg-gray-100">
-                                Materials Science
+                              <SelectItem
+                                value="Technical Support / Product Information"
+                                className="hover:bg-gray-100"
+                              >
+                                Technical Support / Product Information
+                              </SelectItem>
+                              <SelectItem
+                                value="Collaboration / Partnership"
+                                className="hover:bg-gray-100"
+                              >
+                                Collaboration / Partnership
                               </SelectItem>
                               <SelectItem
                                 value="Investment Opportunity"
@@ -226,14 +238,23 @@ export const ContactSection = () => {
                               >
                                 Investment Opportunity
                               </SelectItem>
-                              <SelectItem value="Partnership" className="hover:bg-gray-100">
-                                Partnership
-                              </SelectItem>
                               <SelectItem
-                                value="Research Collaboration"
+                                value="Media / Press Inquiry"
                                 className="hover:bg-gray-100"
                               >
-                                Research Collaboration
+                                Media / Press Inquiry
+                              </SelectItem>
+                              <SelectItem
+                                value="Careers / Internship Opportunities"
+                                className="hover:bg-gray-100"
+                              >
+                                Careers / Internship Opportunities
+                              </SelectItem>
+                              <SelectItem
+                                value="General Inquiry / Other"
+                                className="hover:bg-gray-100"
+                              >
+                                General Inquiry / Other
                               </SelectItem>
                             </SelectContent>
                           </Select>
