@@ -21,18 +21,18 @@ export const NewsSection = () => {
       </div>
 
       {/* News Grid Subsection */}
-      <Section className="bg-[#E8F3FD] py-16 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <Section className="bg-[#E8F3FD] py-16 pl-16 pr-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {newsItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white hover:bg-[#0A3161] p-6 rounded-2xl transition-all duration-300 group shadow-md transform hover:scale-105"
+              className="bg-white hover:bg-[#0A3161] p-5 rounded-xl transition-all duration-300 group shadow-sm transform hover:scale-[1.02] flex flex-col min-h-[300px]"
             >
               <h2 className="text-xl font-semibold font-montserrat text-black group-hover:text-white text-left">
-                {item.title}
-              </h2>
+  {item.title}
+</h2>
 
-              <p className="text-sm italic font-inter text-gray-700 group-hover:text-white mt-2">
+              <p className="text-xs italic font-inter text-gray-700 group-hover:text-white mt-2">
                 {item.date}
               </p>
 
@@ -41,7 +41,7 @@ export const NewsSection = () => {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs italic font-montserrat text-[#b69898] group-hover:text-[#0F96CF] inline-block mt-4 transition-colors duration-300 uppercase tracking-wide"
+                  className="text-xs italic font-montserrat text-[#b69898] group-hover:text-[#0F96CF] inline-block mt-auto transition-colors duration-300 tracking-wide text-left"
                 >
                   Read More →
                 </a>

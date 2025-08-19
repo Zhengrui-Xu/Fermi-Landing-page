@@ -4,6 +4,8 @@ import Section from '@/components/section'
 import ProblemsParallaxV2 from '@/components/problems-parallax-v2'
 import { ContactSection } from '@/components/contact-section'
 import { NewsSection } from '@/components/news-section'
+import { Team } from '@/components/team-section'
+import About from '@/components/about-section'
 
 export default function Home() {
   return (
@@ -11,7 +13,7 @@ export default function Home() {
       <MagicNavbar />
       <Hero />
 
-      <Section id="about" className="bg-accent/5">
+      {/* <Section id="about" className="bg-accent/5">
         <div className="text-center">
           <h2 className="text-foreground mb-6">About Fermi Energy</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
@@ -19,17 +21,10 @@ export default function Home() {
             harness the power of quantum mechanics and advanced materials science.
           </p>
         </div>
-      </Section>
+      </Section> */}
+      <About />
 
-      <Section id="team">
-        <div className="text-center">
-          <h2 className="text-foreground mb-6">Our Team</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            Meet the brilliant minds behind Fermi Energy&apos;s revolutionary technology and
-            breakthrough innovations in sustainable energy solutions.
-          </p>
-        </div>
-      </Section>
+      <Team />
 
       <ProblemsParallaxV2 />
 
