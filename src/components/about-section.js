@@ -1,46 +1,51 @@
-"use client";
+'use client'
 
-import React, { useEffect, useRef } from "react";
-import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from 'react'
+import Image from 'next/image'
+import { motion, useInView } from 'framer-motion'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 /* Optional helper (not used in the new reveal) */
-function FadeFrom({ children, direction = "up", delay = 0 }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-10% 0px -10% 0px" });
-  const map = { up: { y: 24, x: 0 }, down: { y: -24, x: 0 }, left: { x: 24, y: 0 }, right: { x: -24, y: 0 } };
+function FadeFrom({ children, direction = 'up', delay = 0 }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-10% 0px -10% 0px' })
+  const map = {
+    up: { y: 24, x: 0 },
+    down: { y: -24, x: 0 },
+    left: { x: 24, y: 0 },
+    right: { x: -24, y: 0 },
+  }
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, ...map[direction] }}
       animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 0.7, ease: "easeOut", delay }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay }}
     >
       {children}
     </motion.div>
-  );
+  )
 }
 
 export default function About() {
   // HERO
-  const heroRef = useRef(null);
-  const heroImgRef = useRef(null);
-  const heroTaglineRef = useRef(null);
-  const heroOverlayRef = useRef(null);
+  const heroRef = useRef(null)
+  const heroImgRef = useRef(null)
+  const heroTaglineRef = useRef(null)
+  const heroOverlayRef = useRef(null)
 
   // PROBLEM (focus on text)
-  const problemSectionRef = useRef(null);
-  const eyebrowRef = useRef(null);
-  const titleWrapRef = useRef(null);
-  const paraRef = useRef(null);
-  const underlineRef = useRef(null);
-  const vignetteRef = useRef(null);   // soft spotlight behind text
-  const imgWrapRef = useRef(null);
-  const imgDimRef = useRef(null);     // dim overlay over image
+  const problemSectionRef = useRef(null)
+  const eyebrowRef = useRef(null)
+  const titleWrapRef = useRef(null)
+  const paraRef = useRef(null)
+  const underlineRef = useRef(null)
+  const vignetteRef = useRef(null) // soft spotlight behind text
+  const imgWrapRef = useRef(null)
+  const imgDimRef = useRef(null) // dim overlay over image
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -49,74 +54,78 @@ export default function About() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: heroRef.current,
-            start: "top top",
-            end: "+=200%",
+            start: 'top top',
+            end: '+=200%',
             scrub: true,
             pin: true,
           },
-        });
+        })
 
-        tl.to(heroImgRef.current, { scale: 1.6, ease: "none" }, 0)
-          .to(heroTaglineRef.current, { opacity: 0, y: -40, ease: "none" }, 0)
-          .to(heroImgRef.current, { opacity: 0, duration: 0.6, ease: "none" }, 0.65)
-          .to(heroOverlayRef.current, { opacity: 0, duration: 0.6, ease: "none" }, 0.65);
+        tl.to(heroImgRef.current, { scale: 1.6, ease: 'none' }, 0)
+          .to(heroTaglineRef.current, { opacity: 0, y: -40, ease: 'none' }, 0)
+          .to(heroImgRef.current, { opacity: 0, duration: 0.6, ease: 'none' }, 0.65)
+          .to(heroOverlayRef.current, { opacity: 0, duration: 0.6, ease: 'none' }, 0.65)
       }
 
       // ----- PROBLEM: spotlight the statement (pin + word reveal + underline) -----
       if (problemSectionRef.current) {
-        const words = gsap.utils.toArray(".problem-title-word");
+        const words = gsap.utils.toArray('.problem-title-word')
 
         // initial states
-        gsap.set([eyebrowRef.current], { opacity: 0, y: 16 });
-        gsap.set(words, { opacity: 0, y: 36, filter: "blur(6px)" });
-        if (paraRef.current) gsap.set(paraRef.current, { opacity: 0, y: 20 });
-        gsap.set(underlineRef.current, { scaleX: 0, transformOrigin: "0% 50%" });
-        gsap.set(vignetteRef.current, { opacity: 0 });
-        if (imgDimRef.current) gsap.set(imgDimRef.current, { opacity: 0 });
-        if (imgWrapRef.current) gsap.set(imgWrapRef.current, { filter: "grayscale(100%) brightness(0.8)" });
+        gsap.set([eyebrowRef.current], { opacity: 0, y: 16 })
+        gsap.set(words, { opacity: 0, y: 36, filter: 'blur(6px)' })
+        if (paraRef.current) gsap.set(paraRef.current, { opacity: 0, y: 20 })
+        gsap.set(underlineRef.current, { scaleX: 0, transformOrigin: '0% 50%' })
+        gsap.set(vignetteRef.current, { opacity: 0 })
+        if (imgDimRef.current) gsap.set(imgDimRef.current, { opacity: 0 })
+        if (imgWrapRef.current)
+          gsap.set(imgWrapRef.current, { filter: 'grayscale(100%) brightness(0.8)' })
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: problemSectionRef.current,
-            start: "top top",
-            end: "+=160%",
+            start: 'top top',
+            end: '+=160%',
             scrub: true,
             pin: true,
           },
-        });
+        })
 
-        tl.to(vignetteRef.current, { opacity: 1, duration: 0.4, ease: "power1.out" }, 0.0)
-          .to(imgDimRef.current, { opacity: 0.55, duration: 0.4, ease: "power1.out" }, 0.0)
-          .to(eyebrowRef.current, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, 0.05)
+        tl.to(vignetteRef.current, { opacity: 1, duration: 0.4, ease: 'power1.out' }, 0.0)
+          .to(imgDimRef.current, { opacity: 0.55, duration: 0.4, ease: 'power1.out' }, 0.0)
+          .to(eyebrowRef.current, { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' }, 0.05)
           .to(
             words,
             {
               opacity: 1,
               y: 0,
-              filter: "blur(0px)",
+              filter: 'blur(0px)',
               duration: 0.55,
-              ease: "power3.out",
+              ease: 'power3.out',
               stagger: 0.06,
             },
             0.12
           )
-          .to(underlineRef.current, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.22);
+          .to(underlineRef.current, { scaleX: 1, duration: 0.5, ease: 'power3.out' }, 0.22)
 
         if (paraRef.current) {
-          tl.to(paraRef.current, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.3);
+          tl.to(paraRef.current, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.3)
         }
 
         // optional gentle ease back near the end (keeps focus but relaxes slightly)
-        tl.to(imgDimRef.current, { opacity: 0.45, duration: 0.5, ease: "none" }, 0.8)
-          .to(vignetteRef.current, { opacity: 0.9, duration: 0.5, ease: "none" }, 0.8);
+        tl.to(imgDimRef.current, { opacity: 0.45, duration: 0.5, ease: 'none' }, 0.8).to(
+          vignetteRef.current,
+          { opacity: 0.9, duration: 0.5, ease: 'none' },
+          0.8
+        )
       }
-    });
+    })
 
-    return () => ctx.revert();
-  }, []);
+    return () => ctx.revert()
+  }, [])
 
   const problemTitle =
-    "The U.S. relies on imported cathode active material (CAM) — the most critical and costly component of lithium-ion batteries — creating a fragile and insecure supply chain";
+    'The U.S. relies on imported cathode active material (CAM) — the most critical and costly component of lithium-ion batteries — creating a fragile and insecure supply chain'
 
   return (
     <main id="about" className="bg-white text-[#0B1220]">
@@ -176,13 +185,16 @@ export default function About() {
                 style={{ zIndex: 0 }}
               />
               <div ref={titleWrapRef} className="relative z-10">
-                <p ref={eyebrowRef} className="text-xs uppercase tracking-widest text-gray-500 mb-3">
+                <p
+                  ref={eyebrowRef}
+                  className="text-xs uppercase tracking-widest text-gray-500 mb-3"
+                >
                   The Problem
                 </p>
 
                 {/* Title split to words for staggered reveal */}
                 <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
-                  {problemTitle.split(" ").map((w, i) => (
+                  {problemTitle.split(' ').map((w, i) => (
                     <span key={i} className="problem-title-word inline-block mr-2">
                       {w}
                     </span>
@@ -221,5 +233,5 @@ export default function About() {
         </div>
       </section>
     </main>
-  );
+  )
 }

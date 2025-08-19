@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -12,10 +13,12 @@ const PersonCard = ({ person }) => {
     <div className="person-card w-full h-full flex flex-col rounded-[24px] shadow-md overflow-hidden bg-transparent">
       {/* Uniform portrait ratio */}
       <div className="relative w-full aspect-[4/5]">
-        <img
+        <Image
           src={person.img}
           alt={person.name}
-          className="absolute inset-0 w-full h-full object-cover rounded-t-[24px]"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover rounded-t-[24px]"
         />
       </div>
 
@@ -23,9 +26,7 @@ const PersonCard = ({ person }) => {
         <div className="font-montserrat font-semibold text-[#0a3161] text-base leading-snug">
           {person.name}
         </div>
-        <div className="mt-1 text-[#0a3161] opacity-80 font-inter text-xs">
-          {person.role}
-        </div>
+        <div className="mt-1 text-[#0a3161] opacity-80 font-inter text-xs">{person.role}</div>
         {person.linkedin && (
           <a
             href={person.linkedin}
@@ -34,9 +35,17 @@ const PersonCard = ({ person }) => {
             className="inline-flex items-center mt-2"
             aria-label="LinkedIn"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
               <circle cx="12" cy="12" r="12" className="fill-[#0A66C2]" />
-              <path d="M9.4 17.5H7.2V9.8h2.2v7.7ZM8.3 8.8c-.7 0-1.2-.5-1.2-1.1s.5-1.1 1.2-1.1 1.2.5 1.2 1.1-.5 1.1-1.2 1.1Zm10.5 8.7h-2.2v-3.7c0-1.1-.4-1.9-1.4-1.9-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.8v3.8h-2.2V9.8h2.1v1.1c.3-.5 1-1.3 2.3-1.3 1.7 0 2.8 1.1 2.8 3.3v4.6Z" className="fill-white" />
+              <path
+                d="M9.4 17.5H7.2V9.8h2.2v7.7ZM8.3 8.8c-.7 0-1.2-.5-1.2-1.1s.5-1.1 1.2-1.1 1.2.5 1.2 1.1-.5 1.1-1.2 1.1Zm10.5 8.7h-2.2v-3.7c0-1.1-.4-1.9-1.4-1.9-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.8v3.8h-2.2V9.8h2.1v1.1c.3-.5 1-1.3 2.3-1.3 1.7 0 2.8 1.1 2.8 3.3v4.6Z"
+                className="fill-white"
+              />
             </svg>
           </a>
         )}
@@ -49,7 +58,13 @@ const PersonCard = ({ person }) => {
 const InvestorCard = ({ img }) => {
   return (
     <div className="w-full h-full rounded-[24px] bg-[#F2F3F5] shadow-sm p-6 flex items-center justify-center">
-      <img src={img} alt="Investor" className="w-full h-14 md:h-16 object-contain" />
+      <Image
+        src={img}
+        alt="Investor"
+        width={200}
+        height={64}
+        className="w-full h-14 md:h-16 object-contain"
+      />
     </div>
   )
 }
@@ -67,7 +82,12 @@ export const Team = () => {
     const tween = gsap.fromTo(
       el,
       { x: '40vw', opacity: 1 },
-      { x: '-10vw', opacity: 1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 90%', end: '+=800', scrub: true } }
+      {
+        x: '-10vw',
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top 90%', end: '+=800', scrub: true },
+      }
     )
     return () => {
       tween.kill()
@@ -75,104 +95,138 @@ export const Team = () => {
     }
   }, [])
 
-  // Reveal animation for person cards
+  // Reveal animation for person cards (with proper cleanup)
   useEffect(() => {
     const triggers = []
+    const animations = []
+
     gsap.utils.toArray('.person-card').forEach((card, i) => {
       const anim = gsap.fromTo(
         card,
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out', delay: i * 0.06, scrollTrigger: { trigger: card, start: 'top 90%', once: true } }
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: 'power2.out',
+          delay: i * 0.06,
+          scrollTrigger: { trigger: card, start: 'top 90%', once: true },
+        }
       )
+      animations.push(anim)
       if (anim.scrollTrigger) triggers.push(anim.scrollTrigger)
     })
-    return () => triggers.forEach(t => t.kill())
+
+    return () => {
+      animations.forEach(anim => anim.kill())
+      triggers.forEach(trigger => trigger.kill())
+    }
   }, [])
 
   // Auto-scroll investors
- // Auto-scroll investors visually right → left when in viewport
-useEffect(() => {
-  const track = investorTrackRef.current
-  if (!track) return
+  // Auto-scroll investors visually right → left when in viewport
+  useEffect(() => {
+    const track = investorTrackRef.current
+    if (!track) return
 
-  let isScrolling = false
-  let rafId
+    let isScrolling = false
+    let rafId
 
-  const speedPxPerFrame = 0.5 // speed
+    const speedPxPerFrame = 0.5 // speed
 
-  const step = () => {
-    if (isScrolling) {
-      track.scrollLeft += speedPxPerFrame // ✅ Increase for right → left motion
-      if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
-        track.scrollLeft = 0 // loop back to start
+    const step = () => {
+      if (isScrolling) {
+        track.scrollLeft += speedPxPerFrame // ✅ Increase for right → left motion
+        if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
+          track.scrollLeft = 0 // loop back to start
+        }
       }
+      rafId = requestAnimationFrame(step)
     }
+
+    // Observer to start scrolling when in view
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isScrolling = entry.isIntersecting
+      },
+      { threshold: 0.1 }
+    )
+
+    observer.observe(track)
     rafId = requestAnimationFrame(step)
-  }
 
-  // Observer to start scrolling when in view
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      isScrolling = entry.isIntersecting
-    },
-    { threshold: 0.1 }
-  )
-
-  observer.observe(track)
-  rafId = requestAnimationFrame(step)
-
-  return () => {
-    if (rafId) cancelAnimationFrame(rafId)
-    observer.disconnect()
-  }
-}, [])
-
-
-
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId)
+      observer.disconnect()
+    }
+  }, [])
 
   const FOUNDERS = [
-    { name: 'Zhengrui "Ray" Xu', role: 'Co-founder and CEO', img: '/team/founders/Zhengrui_(Ray)_Xu.jpg', linkedin: 'https://www.linkedin.com/in/zhengrui-xu/' },
-    { name: 'Feng Lin', role: 'Co-founder and CTO', img: '/team/founders/Feng_Lin.jpg', linkedin: 'https://www.linkedin.com/in/feng-lin-34108825/' },
+    {
+      name: 'Zhengrui "Ray" Xu',
+      role: 'Co-founder and CEO',
+      img: '/team/founders/Zhengrui_(Ray)_Xu.jpg',
+      linkedin: 'https://www.linkedin.com/in/zhengrui-xu/',
+    },
+    {
+      name: 'Feng Lin',
+      role: 'Co-founder and CTO',
+      img: '/team/founders/Feng_Lin.jpg',
+      linkedin: 'https://www.linkedin.com/in/feng-lin-34108825/',
+    },
   ]
   const ADVISORS = [
-    { name: 'Richard Delmerico', role: 'Advisor', img: '/team/advisors/Richard_Delmerico.png', linkedin: 'https://www.linkedin.com/in/rdelmerico/' },
-    { name: 'Dr. Marca Doeff', role: 'Advisor', img: '/team/advisors/Marca_Doeff.jpg', linkedin: 'https://www.linkedin.com/in/marca-doeff-445677/' },
-    { name: 'Scott Tudman', role: 'Advisor', img: '/team/advisors/Scott_Tudman.jpg', linkedin: 'https://www.linkedin.com/in/scott-tudman/' },
+    {
+      name: 'Richard Delmerico',
+      role: 'Advisor',
+      img: '/team/advisors/Richard_Delmerico.png',
+      linkedin: 'https://www.linkedin.com/in/rdelmerico/',
+    },
+    {
+      name: 'Dr. Marca Doeff',
+      role: 'Advisor',
+      img: '/team/advisors/Marca_Doeff.jpg',
+      linkedin: 'https://www.linkedin.com/in/marca-doeff-445677/',
+    },
+    {
+      name: 'Scott Tudman',
+      role: 'Advisor',
+      img: '/team/advisors/Scott_Tudman.jpg',
+      linkedin: 'https://www.linkedin.com/in/scott-tudman/',
+    },
   ]
   const INVESTORS = [
     '/team/investors/ARPAE.webp',
-     '/team/investors/DOE_EERE.jpeg',
-     '/team/investors/activate.webp',
-     '/team/investors/NENY.jpg',
-     '/team/investors/DOE_SBIR.png',
+    '/team/investors/DOE_EERE.jpeg',
+    '/team/investors/activate.webp',
+    '/team/investors/NENY.jpg',
+    '/team/investors/DOE_SBIR.png',
     '/team/investors/NSF.png',
     '/team/investors/NextCorp.webp',
     '/team/investors/VIPC.png',
-    
   ]
 
   return (
     <>
-     {/* Background section */}
-<section id="team" className="bg-white">
-  {/* Hero Subsection */}
-  <div className="bg-fermi-gradient py-24 px-6 text-white">
-    <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-center sm:justify-start pl-4 text-left">
-      <div className="pb-4">
-        <h1 className="text-[24px] sm:text-[40px] md:text-[52px]  text-[#0A3161] font-bold uppercase tracking-tight font-montserrat leading-tight text-center sm:text-left underline">
-          Our Team
-        </h1>
-      </div>
-    </div>
-  </div>
-</section>
-
+      {/* Background section */}
+      <section id="team" className="bg-white">
+        {/* Hero Subsection */}
+        <div className="bg-fermi-gradient py-24 px-6 text-white">
+          <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-center sm:justify-start pl-4 text-left">
+            <div className="pb-4">
+              <h1 className="text-[24px] sm:text-[40px] md:text-[52px]  text-[#0A3161] font-bold uppercase tracking-tight font-montserrat leading-tight text-center sm:text-left underline">
+                Our Team
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Paragraph */}
       <div className="w-full bg-[#FCF9FF] py-8 px-6 flex justify-start">
-      <p className="max-w-4xl italic text-[#0A3161] font-inter text-2xl sm:text-3xl md:text-2xl font-semibold leading-snug">
-  Meet the minds powering Fermi’s breakthroughs in battery technology...
-</p>
+        <p className="max-w-4xl italic text-[#0A3161] font-inter text-2xl sm:text-3xl md:text-2xl font-semibold leading-snug">
+          Meet the minds powering Fermi’s breakthroughs in battery technology...
+        </p>
       </div>
 
       {/* BUILT ON KNOWLEDGE */}
@@ -183,11 +237,12 @@ useEffect(() => {
         </h2>
       </div>
 
-      <div className="w-full"><hr className="border-0 h-[1px] bg-[#2D7BDA]" /></div>
+      <div className="w-full">
+        <hr className="border-0 h-[1px] bg-[#2D7BDA]" />
+      </div>
 
       {/* ---------------- Grids with bigger spacing ---------------- */}
       <section className="w-full bg-[#FCF9FF] py-12 px-6 ">
-
         {/* Founders */}
         <h3 className="px-6 md:px-8 text-2xl md:text-3xl font-montserrat text-[#0A3161] underline mb-8">
           MEET THE FOUNDERS
@@ -200,7 +255,9 @@ useEffect(() => {
                      grid-cols-1
                      md:[grid-template-columns:repeat(3,minmax(var(--card-w),var(--card-w)))]"
         >
-          {FOUNDERS.map((p, i) => <PersonCard key={`founder-${i}`} person={p} />)}
+          {FOUNDERS.map((p, i) => (
+            <PersonCard key={`founder-${i}`} person={p} />
+          ))}
         </div>
 
         {/* Advisors */}
@@ -215,44 +272,44 @@ useEffect(() => {
                      grid-cols-1
                      md:[grid-template-columns:repeat(3,minmax(var(--card-w),var(--card-w)))]"
         >
-          {ADVISORS.map((p, i) => <PersonCard key={`advisor-${i}`} person={p} />)}
+          {ADVISORS.map((p, i) => (
+            <PersonCard key={`advisor-${i}`} person={p} />
+          ))}
         </div>
 
-      {/* ---------------- Investors ---------------- */}
-<h3 className="px-6 md:px-8 text-2xl md:text-3xl font-montserrat text-[#0A3161] underline mb-8">
-  SUPPORTED BY
-</h3>
+        {/* ---------------- Investors ---------------- */}
+        <h3 className="px-6 md:px-8 text-2xl md:text-3xl font-montserrat text-[#0A3161] underline mb-8">
+          SUPPORTED BY
+        </h3>
 
-<div className="mx-auto w-full max-w-6xl px-6 md:px-8">
-  <div className="relative overflow-hidden">
-    {/* Left fade */}
-    <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#FCF9FF] to-transparent z-10"></div>
-    {/* Right fade */}
-    <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#FCF9FF] to-transparent z-10"></div>
+        <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
+          <div className="relative overflow-hidden">
+            {/* Left fade */}
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#FCF9FF] to-transparent z-10"></div>
+            {/* Right fade */}
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#FCF9FF] to-transparent z-10"></div>
 
-    {/* Track */}
-    <div ref={investorTrackRef} className="overflow-hidden">
-      <div className="flex gap-8">
-        {INVESTORS.concat(INVESTORS).map((img, i) => (
-          <div
-            key={`investor-${i}`}
-            className="shrink-0 basis-1/4 flex items-center justify-center"
-          >
-            <img
-              src={img}
-              alt={`Investor ${i + 1}`}
-              className="h-14 md:h-16 object-contain"
-            />
+            {/* Track */}
+            <div ref={investorTrackRef} className="overflow-hidden">
+              <div className="flex gap-8">
+                {INVESTORS.concat(INVESTORS).map((img, i) => (
+                  <div
+                    key={`investor-${i}`}
+                    className="shrink-0 basis-1/4 flex items-center justify-center"
+                  >
+                    <Image
+                      src={img}
+                      alt={`Investor ${i + 1}`}
+                      width={200}
+                      height={64}
+                      className="h-14 md:h-16 object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
+        </div>
       </section>
     </>
   )

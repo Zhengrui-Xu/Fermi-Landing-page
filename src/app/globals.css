@@ -10,7 +10,7 @@
     transform: translateX(-50%);
   }
 }
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;

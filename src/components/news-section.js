@@ -29,8 +29,8 @@ export const NewsSection = () => {
               className="bg-white hover:bg-[#0A3161] p-5 rounded-xl transition-all duration-300 group shadow-sm transform hover:scale-[1.02] flex flex-col min-h-[300px]"
             >
               <h2 className="text-xl font-semibold font-montserrat text-black group-hover:text-white text-left">
-  {item.title}
-</h2>
+                {item.title}
+              </h2>
 
               <p className="text-xs italic font-inter text-gray-700 group-hover:text-white mt-2">
                 {item.date}

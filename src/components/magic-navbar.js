@@ -10,10 +10,19 @@ export default function MagicNavbar() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener('scroll', handleScroll)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -54,6 +63,7 @@ export default function MagicNavbar() {
                 alt="Fermi Energy Logo"
                 width={96}
                 height={96}
+                priority
                 className="h-full w-full object-contain"
               />
             </div>
@@ -68,6 +78,7 @@ export default function MagicNavbar() {
                 alt="Fermi Energy"
                 width={400}
                 height={80}
+                priority
                 className="h-full w-auto object-contain"
               />
             </div>
