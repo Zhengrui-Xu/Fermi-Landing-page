@@ -63,27 +63,18 @@ export const ContactSection = () => {
           {/* Left Column - Contact Information */}
           <div>
             <div className="mb-4">
-              <h2 className="text-lg mb-2 tracking-wider font-heading" style={{ color: '#B31942' }}>
-                Contact
-              </h2>
+              <h2 className="text-card-subtitle mb-2 tracking-wider text-accent-red">Contact</h2>
 
-              <h2
-                className="text-3xl md:text-4xl font-bold font-heading"
-                style={{ color: '#000000' }}
-              >
-                Connect With Us
-              </h2>
+              <h2 className="text-section-title">Connect With Us</h2>
             </div>
 
             <div className="flex flex-col gap-4">
               <div>
                 <div className="flex gap-2 mb-1">
                   <Building2 style={{ color: '#B31942' }} />
-                  <div className="font-bold font-heading" style={{ color: '#000000' }}>
-                    Find us
-                  </div>
+                  <div className="text-card-title">Find us</div>
                 </div>
-                <div className="font-body" style={{ color: '#000000' }}>
+                <div className="text-body">
                   <div className="mb-2">
                     <strong>Headquarter:</strong>
                     <br />
@@ -104,11 +95,9 @@ export const ContactSection = () => {
               <div>
                 <div className="flex gap-2 mb-1">
                   <Building2 style={{ color: '#B31942' }} />
-                  <div className="font-bold font-heading" style={{ color: '#000000' }}>
-                    LinkedIn
-                  </div>
+                  <div className="text-card-title">LinkedIn</div>
                 </div>
-                <div className="font-body" style={{ color: '#000000' }}>
+                <div className="text-body">
                   <a
                     href="https://www.linkedin.com/company/fermienergy"
                     target="_blank"

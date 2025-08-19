@@ -7,7 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-/* ---------------- Person card (compact + consistent) ---------------- */
+/* ---------------- Person         <p className="max-w-4xl text-body-large italic text-accent-blue leading-snug">
+          Meet the minds powering Fermi's breakthroughs in battery technology...
+        </p>d (compact + consistent) ---------------- */
 const PersonCard = ({ person }) => {
   return (
     <div className="person-card w-full h-full flex flex-col rounded-[24px] shadow-md overflow-hidden bg-transparent">
@@ -231,7 +233,7 @@ export const Team = () => {
 
       {/* BUILT ON KNOWLEDGE */}
       <div className="w-full bg-[#FCF9FF] py-8 px-6 flex justify-start overflow-hidden">
-        <h2 ref={builtRef} className="font-montserrat text-2xl md:text-7xl text-[#477CBF]">
+        <h2 ref={builtRef} className="text-section-title text-accent-blue">
           <span className="font-bold">BUILT ON </span>
           <span className="italic font-normal">KNOWLEDGE</span>
         </h2>
@@ -244,9 +246,7 @@ export const Team = () => {
       {/* ---------------- Grids with bigger spacing ---------------- */}
       <section className="w-full bg-[#FCF9FF] py-12 px-6 ">
         {/* Founders */}
-        <h3 className="px-6 md:px-8 text-2xl md:text-3xl font-montserrat text-[#0A3161] underline mb-8">
-          MEET THE FOUNDERS
-        </h3>
+        <h3 className="px-6 md:px-8 text-card-title underline mb-8">MEET THE FOUNDERS</h3>
         <div
           className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-20
                      [--card-w:240px]
@@ -261,9 +261,7 @@ export const Team = () => {
         </div>
 
         {/* Advisors */}
-        <h3 className="px-6 md:px-8 text-2xl md:text-3xl font-montserrat text-[#0A3161] underline mb-8">
-          MEET THE ADVISORS
-        </h3>
+        <h3 className="px-6 md:px-8 text-card-title underline mb-8">MEET THE ADVISORS</h3>
         <div
           className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-20
                      [--card-w:240px]
@@ -278,9 +276,7 @@ export const Team = () => {
         </div>
 
         {/* ---------------- Investors ---------------- */}
-        <h3 className="px-6 md:px-8 text-2xl md:text-3xl font-montserrat text-[#0A3161] underline mb-8">
-          SUPPORTED BY
-        </h3>
+        <h3 className="px-6 md:px-8 text-card-title underline mb-8">SUPPORTED BY</h3>
 
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
           <div className="relative overflow-hidden">

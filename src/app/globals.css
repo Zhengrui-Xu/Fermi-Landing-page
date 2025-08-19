@@ -102,31 +102,138 @@
     @apply bg-background text-foreground font-body;
   }
 
-  /* Typography System */
+  /* Comprehensive Typography System */
   h1 {
-    @apply font-heading font-bold uppercase tracking-tight text-4xl md:text-5xl lg:text-6xl;
+    @apply font-heading font-bold uppercase tracking-tight text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+    letter-spacing: 0.02em;
+    color: var(--us-flag-blue);
   }
 
   h2 {
-    @apply font-heading font-semibold text-2xl md:text-3xl lg:text-4xl;
+    @apply font-heading font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+    color: var(--us-flag-blue);
   }
 
   h3 {
-    @apply font-heading font-medium text-xl md:text-2xl;
+    @apply font-heading font-medium text-lg md:text-xl lg:text-2xl;
+    color: var(--us-flag-blue);
+  }
+
+  h4 {
+    @apply font-heading font-medium text-base md:text-lg;
+    color: var(--us-flag-blue);
   }
 
   p {
+    @apply font-body text-sm md:text-base leading-relaxed;
+    color: #374151; /* Gray-700 for readability */
+  }
+
+  /* Typography Variants */
+  .text-hero {
+    @apply font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+    color: var(--us-flag-blue);
+    letter-spacing: -0.01em;
+    text-transform: none; /* Override h1 uppercase for hero */
+  }
+
+  .text-section-title {
+    @apply font-heading font-bold uppercase tracking-wide text-2xl md:text-3xl lg:text-4xl;
+    color: var(--us-flag-blue);
+    letter-spacing: 0.03em;
+  }
+
+  .text-card-title {
+    @apply font-heading font-semibold text-lg md:text-xl;
+    color: var(--us-flag-blue);
+  }
+
+  .text-card-subtitle {
+    @apply font-heading font-medium text-sm md:text-base;
+    color: #6b7280; /* Gray-500 */
+  }
+
+  .text-body-large {
     @apply font-body text-base md:text-lg leading-relaxed;
+    color: #374151; /* Gray-700 */
+  }
+
+  .text-body-small {
+    @apply font-body text-xs md:text-sm leading-relaxed;
+    color: #6b7280; /* Gray-500 */
   }
 
   /* Navigation Typography */
   .nav-link {
-    @apply font-heading font-medium uppercase tracking-wide text-sm md:text-base;
+    @apply font-heading font-medium uppercase tracking-wide text-xs md:text-sm;
+    color: var(--us-flag-blue);
+    letter-spacing: 0.05em;
   }
 
   /* Button Typography */
   .btn-text {
-    @apply font-heading font-semibold uppercase tracking-wide;
+    @apply font-heading font-semibold uppercase tracking-wide text-sm md:text-base;
+    letter-spacing: 0.05em;
+  }
+
+  /* Special Text Colors for Dark Backgrounds */
+  .text-on-dark {
+    color: white;
+  }
+
+  .text-accent-red {
+    color: var(--us-flag-red);
+  }
+
+  .text-accent-blue {
+    color: var(--us-flag-blue);
+  }
+
+  /* Light Background - Dark Text */
+  .bg-light h1,
+  .bg-light h2,
+  .bg-light h3,
+  .bg-light h4 {
+    color: var(--us-flag-blue);
+  }
+
+  .bg-light p {
+    color: #374151;
+  }
+
+  /* Dark Background - Light Text */
+  .bg-dark h1,
+  .bg-dark h2,
+  .bg-dark h3,
+  .bg-dark h4 {
+    color: white;
+  }
+
+  .bg-dark p {
+    color: #e5e7eb;
+  }
+
+  /* Color Background - Auto contrast */
+  .bg-red h1,
+  .bg-red h2,
+  .bg-red h3,
+  .bg-red h4 {
+    color: white;
+  }
+
+  .bg-red p {
+    color: #fef2f2;
+  }
+
+  .bg-blue h1,
+  .bg-blue h2,
+  .bg-blue h3,
+  .bg-blue h4 {
+    color: white;
+  }
+
+  .bg-blue p {
+    color: #eff6ff;
   }
 }
 

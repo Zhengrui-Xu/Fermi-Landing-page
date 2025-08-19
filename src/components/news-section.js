@@ -10,10 +10,8 @@ export const NewsSection = () => {
       <div className="bg-fermi-gradient py-24 px-6 text-[#124f99]">
         <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-start pl-4 text-left">
           <div className="pb-4">
-            <h1 className="text-[24px] sm:text-[40px] md:text-[52px] font-bold uppercase tracking-tight font-montserrat leading-tight text-center sm:text-left">
-              Latest At Fermi Energy
-            </h1>
-            <p className="italic text-[20px] font-inter text-[#3C83AC] leading-relaxed mt-0">
+            <h1 className="text-section-title text-center sm:text-left">Latest At Fermi Energy</h1>
+            <p className="text-body-large italic text-[#3C83AC] leading-relaxed mt-0">
               Stay informed about our breakthroughs, media highlights and milestones
             </p>
           </div>
@@ -28,11 +26,11 @@ export const NewsSection = () => {
               key={index}
               className="bg-white hover:bg-[#0A3161] p-5 rounded-xl transition-all duration-300 group shadow-sm transform hover:scale-[1.02] flex flex-col min-h-[300px]"
             >
-              <h2 className="text-xl font-semibold font-montserrat text-black group-hover:text-white text-left">
+              <h2 className="text-card-title text-black group-hover:text-white text-left">
                 {item.title}
               </h2>
 
-              <p className="text-xs italic font-inter text-gray-700 group-hover:text-white mt-2">
+              <p className="text-body-small text-gray-700 group-hover:text-white mt-2">
                 {item.date}
               </p>
 
@@ -41,7 +39,7 @@ export const NewsSection = () => {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs italic font-montserrat text-[#b69898] group-hover:text-[#0F96CF] inline-block mt-auto transition-colors duration-300 tracking-wide text-left"
+                  className="text-body-small text-[#b69898] group-hover:text-[#0F96CF] inline-block mt-auto transition-colors duration-300 tracking-wide text-left"
                 >
                   Read More →
                 </a>

@@ -155,7 +155,7 @@ export default function About() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-6xl font-semibold"
+              className="text-section-title text-on-dark"
             >
               Powering the Future with Advanced Cathodes
             </motion.h1>
@@ -163,7 +163,7 @@ export default function About() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1 }}
-              className="mt-4 text-lg md:text-2xl text-gray-200"
+              className="text-body-large text-on-dark mt-4"
             >
               High performance. Built in the U.S. Designed for energy independence.
             </motion.p>
@@ -185,15 +185,12 @@ export default function About() {
                 style={{ zIndex: 0 }}
               />
               <div ref={titleWrapRef} className="relative z-10">
-                <p
-                  ref={eyebrowRef}
-                  className="text-xs uppercase tracking-widest text-gray-500 mb-3"
-                >
+                <p ref={eyebrowRef} className="text-card-subtitle uppercase tracking-widest mb-3">
                   The Problem
                 </p>
 
                 {/* Title split to words for staggered reveal */}
-                <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
+                <h2 className="text-section-title leading-tight">
                   {problemTitle.split(' ').map((w, i) => (
                     <span key={i} className="problem-title-word inline-block mr-2">
                       {w}

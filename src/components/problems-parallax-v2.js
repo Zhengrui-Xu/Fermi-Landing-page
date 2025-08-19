@@ -218,8 +218,8 @@ const ProblemsParallaxV2 = () => {
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Products</h1>
-            <p className="text-base md:text-lg font-medium text-gray-700 max-w-3xl mx-auto px-2">
+            <h1 className="text-section-title text-gray-900 mb-4">Our Products</h1>
+            <p className="text-body-large text-gray-700 max-w-3xl mx-auto px-2">
               Advanced cathode active materials powering the future of energy storage
             </p>
           </div>
@@ -244,12 +244,8 @@ const ProblemsParallaxV2 = () => {
                       <product.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-xl md:text-2xl font-bold text-gray-900">
-                        {product.title}
-                      </h2>
-                      <h3 className="text-sm md:text-base font-semibold text-gray-600">
-                        {product.subtitle}
-                      </h3>
+                      <h2 className="text-card-title text-gray-900">{product.title}</h2>
+                      <h3 className="text-card-subtitle text-gray-600">{product.subtitle}</h3>
                     </div>
                   </div>
                 </div>
@@ -271,7 +267,7 @@ const ProblemsParallaxV2 = () => {
 
                   {/* Key Features */}
                   <div className="space-y-4">
-                    <h4 className="text-lg font-bold text-gray-900 text-center">Key Features</h4>
+                    <h4 className="text-card-title text-gray-900 text-center">Key Features</h4>
                     <ul className="space-y-3">
                       {product.features.map((feature, featureIndex) => (
                         <li
