@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes investor-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+ 
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -179,6 +188,9 @@ html.lenis {
 
 .animation-delay-6000 {
   animation-delay: 6s;
+}
+.animate-investor-scroll {
+  animation: investor-scroll 20s linear infinite;
 }
 
 @theme inline {
