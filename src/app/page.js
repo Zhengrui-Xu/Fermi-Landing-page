@@ -1,9 +1,20 @@
+import { lazy, Suspense } from 'react'
 import MagicNavbar from '@/components/magic-navbar'
 import Hero from '@/components/hero'
 import Section from '@/components/section'
-import ProblemsParallaxV2 from '@/components/problems-parallax-v2'
-import { ContactSection } from '@/components/contact-section'
-import { NewsSection } from '@/components/news-section'
+
+// Lazy load components below the fold for better performance
+const ProblemsParallaxV2 = lazy(() => import('@/components/problems-parallax-v2'))
+const ContactSection = lazy(() =>
+  import('@/components/contact-section').then(module => ({ default: module.ContactSection }))
+)
+const NewsSection = lazy(() =>
+  import('@/components/news-section').then(module => ({ default: module.NewsSection }))
+)
+const Team = lazy(() =>
+  import('@/components/team-section').then(module => ({ default: module.Team }))
+)
+const About = lazy(() => import('@/components/about-section'))
 
 export default function Home() {
   return (
@@ -11,7 +22,7 @@ export default function Home() {
       <MagicNavbar />
       <Hero />
 
-      <Section id="about" className="bg-accent/5">
+      {/* <Section id="about" className="bg-accent/5">
         <div className="text-center">
           <h2 className="text-foreground mb-6">About Fermi Energy</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
@@ -19,19 +30,45 @@ export default function Home() {
             harness the power of quantum mechanics and advanced materials science.
           </p>
         </div>
-      </Section>
+      </Section> */}
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-us-flag-blue mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading...</p>
+            </div>
+          </div>
+        }
+      >
+        <About />
+      </Suspense>
 
-      <Section id="team">
-        <div className="text-center">
-          <h2 className="text-foreground mb-6">Our Team</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            Meet the brilliant minds behind Fermi Energy&apos;s revolutionary technology and
-            breakthrough innovations in sustainable energy solutions.
-          </p>
-        </div>
-      </Section>
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-us-flag-blue mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading team...</p>
+            </div>
+          </div>
+        }
+      >
+        <Team />
+      </Suspense>
 
-      <ProblemsParallaxV2 />
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-us-flag-blue mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading products...</p>
+            </div>
+          </div>
+        }
+      >
+        <ProblemsParallaxV2 />
+      </Suspense>
 
       {/* <Section id="news" className="bg-accent/5">
         <div className="text-center">
@@ -42,9 +79,31 @@ export default function Home() {
           </p>
         </div>
       </Section> */}
-      <NewsSection />
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-us-flag-blue mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading news...</p>
+            </div>
+          </div>
+        }
+      >
+        <NewsSection />
+      </Suspense>
 
-      <ContactSection />
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-us-flag-blue mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading contact...</p>
+            </div>
+          </div>
+        }
+      >
+        <ContactSection />
+      </Suspense>
     </>
   )
 }

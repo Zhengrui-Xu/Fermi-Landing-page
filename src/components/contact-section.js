@@ -46,7 +46,6 @@ export const ContactSection = () => {
 
   function onSubmit(values) {
     const { firstName, lastName, email, subject, message } = values
-    console.log(values)
 
     // Update the email to match Fermi Energy contact
     const mailToLink = `mailto:fenglin@fermienergy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hello, I am ${firstName} ${lastName}.\n\nMy email is: ${email}\n\nMessage:\n${message}`)}`

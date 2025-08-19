@@ -57,10 +57,11 @@ const ProblemsParallaxV2 = () => {
   useEffect(() => {
     const container = containerRef.current
     const sections = sectionsRef.current
+    let resizeTimeout = null
 
     if (!container || sections.length === 0) return
 
-    // Clear any existing ScrollTrigger instances
+    // Clear any existing ScrollTrigger instances for this container
     ScrollTrigger.getAll().forEach(trigger => {
       if (trigger.trigger === container) {
         trigger.kill()
@@ -134,21 +135,43 @@ const ProblemsParallaxV2 = () => {
       )
     }
 
-    // Handle resize
+    // Throttled resize handler for better performance
     const handleResize = () => {
-      // Kill existing triggers
-      ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.trigger === container) {
-          trigger.kill()
-        }
-      })
+      if (resizeTimeout) {
+        clearTimeout(resizeTimeout)
+      }
 
-      // Re-setup with new breakpoint
-      setTimeout(() => {
+      resizeTimeout = setTimeout(() => {
+        // Kill existing triggers for this container only
+        ScrollTrigger.getAll().forEach(trigger => {
+          if (trigger.trigger === container) {
+            trigger.kill()
+          }
+        })
+
+        // Re-setup with new breakpoint
         const newIsLaptopOrDesktop = window.innerWidth >= 1280
 
         if (!newIsLaptopOrDesktop) {
           gsap.set(sections, { x: 0, opacity: 1, clearProps: 'all' })
+
+          // Re-setup mobile animations
+          sections.forEach((section, index) => {
+            if (section) {
+              gsap.from(section, {
+                opacity: 0,
+                y: 60,
+                duration: 0.8,
+                delay: index * 0.2,
+                ease: 'power3.out',
+                scrollTrigger: {
+                  trigger: section,
+                  start: 'top 80%',
+                  toggleActions: 'play none none reverse',
+                },
+              })
+            }
+          })
         } else {
           gsap.set(sections[0], { x: '0%', opacity: 1 })
           gsap.set(sections[1], { x: '100%', opacity: 1 })
@@ -169,13 +192,16 @@ const ProblemsParallaxV2 = () => {
             .to(sections[0], { x: '-100%', opacity: 1, duration: 1, ease: 'none' }, 0)
             .to(sections[1], { x: '0%', opacity: 1, duration: 1, ease: 'none' }, 0)
         }
-      }, 100)
+      }, 150) // Throttle to 150ms for better performance
     }
 
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize, { passive: true })
 
     // Cleanup
     return () => {
+      if (resizeTimeout) {
+        clearTimeout(resizeTimeout)
+      }
       window.removeEventListener('resize', handleResize)
       ScrollTrigger.getAll().forEach(trigger => {
         if (trigger.trigger === container) {
