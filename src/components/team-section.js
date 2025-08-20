@@ -7,9 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-/* ---------------- Person         <p className="max-w-4xl text-body-large italic text-accent-blue leading-snug">
-          Meet the minds powering Fermi's breakthroughs in battery technology...
-        </p>d (compact + consistent) ---------------- */
+/* ---------------- Person card (compact + consistent) ---------------- */
 const PersonCard = ({ person }) => {
   return (
     <div className="person-card w-full h-full flex flex-col rounded-[24px] shadow-md overflow-hidden bg-transparent">
@@ -24,7 +22,7 @@ const PersonCard = ({ person }) => {
         />
       </div>
 
-      <div className="bg-[#E6E0F0] rounded-b-[24px] p-3">
+      <div className="bg-[#F1F0F1] rounded-b-[24px] p-3">
         <div className="font-montserrat font-semibold text-[#0a3161] text-base leading-snug">
           {person.name}
         </div>
@@ -37,12 +35,7 @@ const PersonCard = ({ person }) => {
             className="inline-flex items-center mt-2"
             aria-label="LinkedIn"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none">
               <circle cx="12" cy="12" r="12" className="fill-[#0A66C2]" />
               <path
                 d="M9.4 17.5H7.2V9.8h2.2v7.7ZM8.3 8.8c-.7 0-1.2-.5-1.2-1.1s.5-1.1 1.2-1.1 1.2.5 1.2 1.1-.5 1.1-1.2 1.1Zm10.5 8.7h-2.2v-3.7c0-1.1-.4-1.9-1.4-1.9-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.8v3.8h-2.2V9.8h2.1v1.1c.3-.5 1-1.3 2.3-1.3 1.7 0 2.8 1.1 2.8 3.3v4.6Z"
@@ -72,30 +65,7 @@ const InvestorCard = ({ img }) => {
 }
 
 export const Team = () => {
-  const builtRef = useRef(null)
   const investorTrackRef = useRef(null)
-  const isPausedRef = useRef(false)
-  const rafIdRef = useRef(null)
-
-  // BUILT ON KNOWLEDGE animation
-  useEffect(() => {
-    const el = builtRef.current
-    if (!el) return
-    const tween = gsap.fromTo(
-      el,
-      { x: '40vw', opacity: 1 },
-      {
-        x: '-10vw',
-        opacity: 1,
-        ease: 'none',
-        scrollTrigger: { trigger: el, start: 'top 90%', end: '+=800', scrub: true },
-      }
-    )
-    return () => {
-      tween.kill()
-      if (tween.scrollTrigger) tween.scrollTrigger.kill()
-    }
-  }, [])
 
   // Reveal animation for person cards (with proper cleanup)
   useEffect(() => {
@@ -125,8 +95,7 @@ export const Team = () => {
     }
   }, [])
 
-  // Auto-scroll investors
-  // Auto-scroll investors visually right → left when in viewport
+  // Auto-scroll investors right → left when in viewport
   useEffect(() => {
     const track = investorTrackRef.current
     if (!track) return
@@ -134,19 +103,18 @@ export const Team = () => {
     let isScrolling = false
     let rafId
 
-    const speedPxPerFrame = 0.5 // speed
+    const speedPxPerFrame = 1.25
 
     const step = () => {
       if (isScrolling) {
-        track.scrollLeft += speedPxPerFrame // ✅ Increase for right → left motion
+        track.scrollLeft += speedPxPerFrame
         if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
-          track.scrollLeft = 0 // loop back to start
+          track.scrollLeft = 0
         }
       }
       rafId = requestAnimationFrame(step)
     }
 
-    // Observer to start scrolling when in view
     const observer = new IntersectionObserver(
       ([entry]) => {
         isScrolling = entry.isIntersecting
@@ -198,6 +166,7 @@ export const Team = () => {
     },
   ]
   const INVESTORS = [
+    
     '/team/investors/ARPAE.webp',
     '/team/investors/DOE_EERE.jpeg',
     '/team/investors/activate.webp',
@@ -216,7 +185,7 @@ export const Team = () => {
         <div className="bg-fermi-gradient py-24 px-6 text-white">
           <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-center sm:justify-start pl-4 text-left">
             <div className="pb-4">
-              <h1 className="text-[24px] sm:text-[40px] md:text-[52px]  text-[#0A3161] font-bold uppercase tracking-tight font-montserrat leading-tight text-center sm:text-left underline">
+              <h1 className="text-[24px] sm:text-[40px] md:text-[52px] text-[#0A3161] font-bold uppercase tracking-tight font-montserrat leading-tight text-center sm:text-left underline">
                 Our Team
               </h1>
             </div>
@@ -224,70 +193,71 @@ export const Team = () => {
         </div>
       </section>
 
-      {/* Paragraph */}
-      <div className="w-full bg-[#FCF9FF] py-8 px-6 flex justify-start">
-        <p className="max-w-4xl italic text-[#0A3161] font-inter text-2xl sm:text-3xl md:text-2xl font-semibold leading-snug">
-          Meet the minds powering Fermi’s breakthroughs in battery technology...
-        </p>
-      </div>
-
-      {/* BUILT ON KNOWLEDGE */}
-      <div className="w-full bg-[#FCF9FF] py-8 px-6 flex justify-start overflow-hidden">
-        <h2 ref={builtRef} className="text-section-title text-accent-blue">
-          <span className="font-bold">BUILT ON </span>
-          <span className="italic font-normal">KNOWLEDGE</span>
-        </h2>
-      </div>
-
-      <div className="w-full">
-        <hr className="border-0 h-[1px] bg-[#2D7BDA]" />
-      </div>
-
-      {/* ---------------- Grids with bigger spacing ---------------- */}
-      <section className="w-full bg-[#FCF9FF] py-12 px-6 ">
+      {/* ---------------- Centered Grids with larger spacing ---------------- */}
+      <section className="w-full bg-white py-16 md:py-24 px-6">
         {/* Founders */}
-        <h3 className="px-6 md:px-8 text-card-title underline mb-8">MEET THE FOUNDERS</h3>
+        <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
+          <h3 className="text-center underline font-montserrat text-[#0A3161] text-3xl sm:text-4xl md:text-5xl tracking-tight">
+            MEET THE FOUNDERS
+          </h3>
+        </div>
+
         <div
-          className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-20
-                     [--card-w:240px]
-                     grid justify-center
-                     gap-y-12 gap-x-10 md:gap-x-16 md:gap-y-16
-                     grid-cols-1
-                     md:[grid-template-columns:repeat(3,minmax(var(--card-w),var(--card-w)))]"
+          className="
+            mx-auto w-full max-w-7xl px-6 md:px-8 mb-28
+            [--card-w:260px]
+            grid grid-cols-1 md:grid-cols-3 place-items-center
+            gap-y-16 lg:gap-y-24
+            gap-x-14 lg:gap-x-20
+          "
         >
           {FOUNDERS.map((p, i) => (
-            <PersonCard key={`founder-${i}`} person={p} />
+            <div key={`founder-${i}`} className="w-[var(--card-w)]">
+              <PersonCard person={p} />
+            </div>
           ))}
         </div>
 
         {/* Advisors */}
-        <h3 className="px-6 md:px-8 text-card-title underline mb-8">MEET THE ADVISORS</h3>
+        <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
+          <h3 className="text-center underline font-montserrat text-[#0A3161] text-3xl sm:text-4xl md:text-5xl tracking-tight">
+            MEET THE ADVISORS
+          </h3>
+        </div>
+
         <div
-          className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-20
-                     [--card-w:240px]
-                     grid justify-center
-                     gap-y-12 gap-x-10 md:gap-x-16 md:gap-y-16
-                     grid-cols-1
-                     md:[grid-template-columns:repeat(3,minmax(var(--card-w),var(--card-w)))]"
+          className="
+            mx-auto w-full max-w-7xl px-6 md:px-8 mb-28
+            [--card-w:260px]
+            grid grid-cols-1 md:grid-cols-3 place-items-center
+            gap-y-16 lg:gap-y-24
+            gap-x-14 lg:gap-x-20
+          "
         >
           {ADVISORS.map((p, i) => (
-            <PersonCard key={`advisor-${i}`} person={p} />
+            <div key={`advisor-${i}`} className="w-[var(--card-w)]">
+              <PersonCard person={p} />
+            </div>
           ))}
         </div>
 
-        {/* ---------------- Investors ---------------- */}
-        <h3 className="px-6 md:px-8 text-card-title underline mb-8">SUPPORTED BY</h3>
+        {/* Investors */}
+        <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
+          <h3 className="text-center underline font-montserrat text-[#0A3161] text-3xl sm:text-4xl md:text-5xl tracking-tight">
+            SUPPORTED BY
+          </h3>
+        </div>
 
-        <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-8">
           <div className="relative overflow-hidden">
             {/* Left fade */}
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#FCF9FF] to-transparent z-10"></div>
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#FCF9FF] to-transparent z-10" />
             {/* Right fade */}
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#FCF9FF] to-transparent z-10"></div>
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#FCF9FF] to-transparent z-10" />
 
             {/* Track */}
-            <div ref={investorTrackRef} className="overflow-hidden">
-              <div className="flex gap-8">
+            <div ref={investorTrackRef} className="overflow-hidden py-6">
+              <div className="flex gap-10 md:gap-16">
                 {INVESTORS.concat(INVESTORS).map((img, i) => (
                   <div
                     key={`investor-${i}`}
@@ -296,8 +266,8 @@ export const Team = () => {
                     <Image
                       src={img}
                       alt={`Investor ${i + 1}`}
-                      width={200}
-                      height={64}
+                      width={220}
+                      height={70}
                       className="h-14 md:h-16 object-contain"
                     />
                   </div>
