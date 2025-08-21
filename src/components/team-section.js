@@ -22,7 +22,7 @@ const PersonCard = ({ person }) => {
         />
       </div>
 
-      <div className="bg-[#F1F0F1] rounded-b-[24px] p-3">
+      <div className="bg-[#F0EFEB] rounded-b-[24px] p-3">
         <div className="font-montserrat font-semibold text-[#0a3161] text-base leading-snug">
           {person.name}
         </div>
@@ -135,13 +135,13 @@ export const Team = () => {
     {
       name: 'Zhengrui "Ray" Xu',
       role: 'Co-founder and CEO',
-      img: '/team/founders/Zhengrui_(Ray)_Xu.jpg',
+      img: '/team/founders/Zhengrui_Ray_Xu.webp',
       linkedin: 'https://www.linkedin.com/in/zhengrui-xu/',
     },
     {
       name: 'Feng Lin',
       role: 'Co-founder and CTO',
-      img: '/team/founders/Feng_Lin.jpg',
+      img: '/team/founders/Feng_Lin.webp',
       linkedin: 'https://www.linkedin.com/in/feng-lin-34108825/',
     },
   ]
@@ -149,19 +149,19 @@ export const Team = () => {
     {
       name: 'Richard Delmerico',
       role: 'Advisor',
-      img: '/team/advisors/Richard_Delmerico.png',
+      img: '/team/advisors/Richard_Delmerico_advisor.webp',
       linkedin: 'https://www.linkedin.com/in/rdelmerico/',
     },
     {
       name: 'Dr. Marca Doeff',
       role: 'Advisor',
-      img: '/team/advisors/Marca_Doeff.jpg',
+      img: '/team/advisors/Marca_Doeff_advisor.webp',
       linkedin: 'https://www.linkedin.com/in/marca-doeff-445677/',
     },
     {
       name: 'Scott Tudman',
       role: 'Advisor',
-      img: '/team/advisors/Scott_Tudman.jpg',
+      img: '/team/advisors/Scott_Tudman_advisor.webp',
       linkedin: 'https://www.linkedin.com/in/scott-tudman/',
     },
   ]
