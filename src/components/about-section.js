@@ -24,11 +24,7 @@ function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
         </p>
 
         <div className="relative">
-          {/* Decorative vertical accent bar */}
-          <span
-            className="absolute -left-3 top-1 w-1 h-[1.25em] bg-[#0B1220] rounded-full"
-            aria-hidden="true"
-          />
+          {/* (removed the decorative vertical accent line) */}
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-[#0A3161]">
             <span>{line1}</span>
             {line2 && (
@@ -104,7 +100,7 @@ export default function AboutSection() {
 
       {/* SINGLE PROBLEM SECTION */}
       <section className="relative w-full bg-white">
-        {/* ⬇️ Reduced side padding here */}
+        {/* Reduced side padding */}
         <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
           <ProblemBlock title={PROBLEM} imageSrc="/about/problem_1.png" />
         </div>
