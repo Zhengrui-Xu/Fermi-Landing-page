@@ -35,7 +35,12 @@ const PersonCard = ({ person }) => {
             className="inline-flex items-center mt-2"
             aria-label="LinkedIn"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
               <circle cx="12" cy="12" r="12" className="fill-[#0A66C2]" />
               <path
                 d="M9.4 17.5H7.2V9.8h2.2v7.7ZM8.3 8.8c-.7 0-1.2-.5-1.2-1.1s.5-1.1 1.2-1.1 1.2.5 1.2 1.1-.5 1.1-1.2 1.1Zm10.5 8.7h-2.2v-3.7c0-1.1-.4-1.9-1.4-1.9-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.8v3.8h-2.2V9.8h2.1v1.1c.3-.5 1-1.3 2.3-1.3 1.7 0 2.8 1.1 2.8 3.3v4.6Z"
@@ -166,7 +171,6 @@ export const Team = () => {
     },
   ]
   const INVESTORS = [
-    
     '/team/investors/ARPAE.webp',
     '/team/investors/DOE_EERE.jpeg',
     '/team/investors/activate.webp',

@@ -27,7 +27,7 @@ const ProblemsParallaxV2 = () => {
     {
       id: 1,
       title: 'Gen-1 CAM',
-      subtitle: "Fermi Energy's Gen-1 CAM",
+      subtitle: 'Advanced Cathode Active Material',
       image: '/LogoFinal/OurProducts/Gen1After.png',
       features: [
         'Cuts energy use by 70% with proprietary low-temp calcination',
@@ -41,7 +41,7 @@ const ProblemsParallaxV2 = () => {
     {
       id: 2,
       title: 'Gen-2 CAM',
-      subtitle: "Fermi Energy's Gen-2 CAM",
+      subtitle: 'Next-Generation Cathode Technology',
       image: '/LogoFinal/OurProducts/Gen2After.png',
       features: [
         'Cuts CAM cost by 50% using abundant Mn & Fe',
@@ -334,40 +334,46 @@ const ProblemsParallaxV2 = () => {
               ref={el => {
                 sectionsRef.current[index] = el
               }}
-              className="absolute inset-0 flex items-center justify-center p-6 md:p-12"
+              className="absolute inset-0 flex items-center justify-center p-4 lg:p-6 xl:p-12"
             >
-              <div className="max-w-7xl mx-auto w-full h-full flex items-center">
+              <div className="max-w-6xl xl:max-w-7xl mx-auto w-full h-full flex items-center">
                 {/* Desktop: Side-by-side Layout */}
-                <div className="grid grid-cols-2 gap-16 h-full items-center w-full">
+                <div className="grid grid-cols-2 gap-8 lg:gap-12 xl:gap-16 h-fit max-h-[85vh] items-center w-full">
                   {/* Left: Content */}
-                  <div className="space-y-8 bg-white/95 backdrop-blur-md rounded-3xl p-10 shadow-2xl border border-white/30 h-fit">
-                    <div className="flex items-center gap-6 mb-8">
+                  <div className="space-y-6 lg:space-y-8 bg-white/95 backdrop-blur-md rounded-3xl p-6 lg:p-8 xl:p-10 shadow-2xl border border-white/30 overflow-y-auto max-h-[75vh]">
+                    <div className="flex items-center gap-4 lg:gap-6 mb-6 lg:mb-8">
                       <div
-                        className="p-5 rounded-xl shadow-lg"
+                        className="p-3 lg:p-4 xl:p-5 rounded-xl shadow-lg"
                         style={{ backgroundColor: product.color }}
                       >
-                        <product.icon className="h-10 w-10 text-white" />
+                        <product.icon className="h-6 w-6 lg:h-8 lg:w-8 xl:h-10 xl:w-10 text-white" />
                       </div>
                       <div>
-                        <h2 className="text-4xl font-bold text-gray-900">{product.title}</h2>
-                        <h3 className="text-xl font-semibold text-gray-600">{product.subtitle}</h3>
+                        <h2 className="text-lg lg:text-2xl xl:text-4xl font-bold text-gray-900">
+                          {product.title}
+                        </h2>
+                        <h3 className="text-sm lg:text-base xl:text-xl font-semibold text-gray-600">
+                          {product.subtitle}
+                        </h3>
                       </div>
                     </div>
 
                     {/* Features */}
                     <div>
-                      <h4 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h4>
-                      <ul className="space-y-4">
+                      <h4 className="text-base lg:text-xl xl:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">
+                        Key Features
+                      </h4>
+                      <ul className="space-y-3 lg:space-y-4">
                         {product.features.map((feature, featureIndex) => (
                           <li
                             key={featureIndex}
-                            className="flex items-start gap-4 p-4 rounded-lg bg-gray-50/80 hover:bg-gray-100/80 transition-colors duration-200"
+                            className="flex items-start gap-3 lg:gap-4 p-3 lg:p-4 rounded-lg bg-gray-50/80 hover:bg-gray-100/80 transition-colors duration-200"
                           >
                             <div
-                              className="w-3 h-3 rounded-full mt-2 flex-shrink-0"
+                              className="w-2 h-2 lg:w-2.5 lg:h-2.5 xl:w-3 xl:h-3 rounded-full mt-1.5 lg:mt-2 flex-shrink-0"
                               style={{ backgroundColor: product.color }}
                             />
-                            <span className="text-base text-gray-700 leading-relaxed">
+                            <span className="text-xs lg:text-sm xl:text-base text-gray-700 leading-relaxed">
                               {feature}
                             </span>
                           </li>
@@ -378,13 +384,13 @@ const ProblemsParallaxV2 = () => {
 
                   {/* Right: Image */}
                   <div className="flex items-center justify-center h-full">
-                    <div className="w-full max-w-lg aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 transition-transform duration-300 hover:scale-105">
+                    <div className="w-full max-w-sm lg:max-w-md xl:max-w-lg aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 transition-transform duration-300 hover:scale-105">
                       <Image
                         src={product.image}
                         alt={product.title}
                         width={500}
                         height={375}
-                        className="w-full h-full object-contain p-6"
+                        className="w-full h-full object-contain p-3 lg:p-4 xl:p-6"
                       />
                     </div>
                   </div>

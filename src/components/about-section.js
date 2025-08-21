@@ -1,13 +1,14 @@
-"use client";
+'use client'
 
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 /* -------------------- Reusable Problem Block (static text) -------------------- */
-function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
-  const splitAt = title.indexOf(". ") >= 0 ? title.indexOf(". ") + 1 : -1;
-  const line1 = splitAt > 0 ? title.slice(0, splitAt) : title;
-  const line2 = splitAt > 0 ? title.slice(splitAt + 1) : "";
+function ProblemBlock({ eyebrow = 'The Problem', title, imageSrc }) {
+  const splitAt = title.indexOf('. ') >= 0 ? title.indexOf('. ') + 1 : -1
+  const line1 = splitAt > 0 ? title.slice(0, splitAt) : title
+  const line2 = splitAt > 0 ? title.slice(splitAt + 1) : ''
 
   return (
     <div
@@ -19,9 +20,7 @@ function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
     >
       {/* LEFT: Static text */}
       <div className="relative">
-        <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">
-          {eyebrow}
-        </p>
+        <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">{eyebrow}</p>
 
         <div className="relative">
           {/* Decorative vertical accent bar */}
@@ -47,24 +46,23 @@ function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
       {/* RIGHT: Image */}
       <div className="relative">
         <div className="inline-block rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/10 bg-white">
-          <img
+          <Image
             src={imageSrc}
             alt="Problem visual"
+            width={560}
+            height={400}
             className="block max-w-[560px] w-full h-auto object-contain"
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
           />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 /* -------------------- Main About Section -------------------- */
 export default function AboutSection() {
   const PROBLEM =
-    "The U.S. relies on imported cathode active material (CAM). Domestic CAM production remains limited, expensive, and energy-intensive";
+    'The U.S. relies on imported cathode active material (CAM). Domestic CAM production remains limited, expensive, and energy-intensive'
 
   return (
     <main id="about" className="bg-white text-[#0B1220]">
@@ -110,5 +108,5 @@ export default function AboutSection() {
         </div>
       </section>
     </main>
-  );
+  )
 }
