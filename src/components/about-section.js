@@ -1,15 +1,10 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import React from "react";
+import { motion } from "framer-motion";
 
-/* -------------------- Reusable Problem Block (static text) -------------------- */
-function ProblemBlock({ eyebrow = 'The Problem', title, imageSrc }) {
-  const splitAt = title.indexOf('. ') >= 0 ? title.indexOf('. ') + 1 : -1
-  const line1 = splitAt > 0 ? title.slice(0, splitAt) : title
-  const line2 = splitAt > 0 ? title.slice(splitAt + 1) : ''
 
+function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
   return (
     <div
       className="
@@ -18,26 +13,15 @@ function ProblemBlock({ eyebrow = 'The Problem', title, imageSrc }) {
         md:grid-cols-[minmax(320px,48ch)_minmax(300px,560px)]
       "
     >
-      {/* LEFT: Static text */}
+      {/* LEFT: Static text*/}
       <div className="relative">
-        <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">{eyebrow}</p>
+        <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">
+          {eyebrow}
+        </p>
 
-        <div className="relative">
-          {/* Decorative vertical accent bar */}
-          <span
-            className="absolute -left-3 top-1 w-1 h-[1.25em] bg-[#0B1220] rounded-full"
-            aria-hidden="true"
-          />
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-[#0A3161]">
-            <span>{line1}</span>
-            {line2 && (
-              <>
-                <br />
-                <span>{line2}</span>
-              </>
-            )}
-          </h2>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight text-[#0A3161] md:max-w-[48ch]">
+          {title}
+        </h2>
 
         {/* Underline */}
         <span className="mt-3 block h-[3px] w-full bg-[#0B1220]/80 rounded-full" />
@@ -46,27 +30,28 @@ function ProblemBlock({ eyebrow = 'The Problem', title, imageSrc }) {
       {/* RIGHT: Image */}
       <div className="relative">
         <div className="inline-block rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/10 bg-white">
-          <Image
+          <img
             src={imageSrc}
             alt="Problem visual"
-            width={560}
-            height={400}
             className="block max-w-[560px] w-full h-auto object-contain"
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+            }}
           />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 /* -------------------- Main About Section -------------------- */
 export default function AboutSection() {
   const PROBLEM =
-    'The U.S. relies on imported cathode active material (CAM). Domestic CAM production remains limited, expensive, and energy-intensive'
+    "The U.S. relies on imported cathode active material (CAM). Domestic CAM production remains limited, expensive, and energy-intensive";
 
   return (
     <main id="about" className="bg-white text-[#0B1220]">
-      {/* HERO */}
+      {/* HERO*/}
       <section className="relative h-screen w-full overflow-hidden">
         <video
           src="/battery.mov"
@@ -78,6 +63,7 @@ export default function AboutSection() {
         />
         <div className="absolute inset-0 bg-black/60" />
 
+        {/* Centered copy */}
         <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
           <div>
             <motion.h1
@@ -100,13 +86,12 @@ export default function AboutSection() {
         </div>
       </section>
 
-      {/* SINGLE PROBLEM SECTION */}
+      {/* PROBLEM SECTION */}
       <section className="relative w-full bg-white">
-        {/* ⬇️ Reduced side padding here */}
         <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
-          <ProblemBlock title={PROBLEM} imageSrc="/about/problem_1.png" />
+          <ProblemBlock title={PROBLEM} imageSrc="/about/problem.png" />
         </div>
       </section>
     </main>
-  )
+  );
 }
