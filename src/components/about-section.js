@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/* -------------------- Reusable Problem Block (no manual line breaks) -------------------- */
+
 function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
   return (
     <div
@@ -13,7 +13,7 @@ function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
         md:grid-cols-[minmax(320px,48ch)_minmax(300px,560px)]
       "
     >
-      {/* LEFT: Static text (let the browser wrap naturally) */}
+      {/* LEFT: Static text*/}
       <div className="relative">
         <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">
           {eyebrow}
@@ -51,7 +51,7 @@ export default function AboutSection() {
 
   return (
     <main id="about" className="bg-white text-[#0B1220]">
-      {/* HERO (static, dark overlay for contrast) */}
+      {/* HERO*/}
       <section className="relative h-screen w-full overflow-hidden">
         <video
           src="/battery.mov"
@@ -86,7 +86,7 @@ export default function AboutSection() {
         </div>
       </section>
 
-      {/* SINGLE PROBLEM SECTION */}
+      {/* PROBLEM SECTION */}
       <section className="relative w-full bg-white">
         <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
           <ProblemBlock title={PROBLEM} imageSrc="/about/problem.png" />

@@ -7,11 +7,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-/* ---------------- Person card (compact + consistent) ---------------- */
+/* ---------------- Person card ---------------- */
 const PersonCard = ({ person }) => {
   return (
     <div className="person-card w-full h-full flex flex-col rounded-[24px] shadow-md overflow-hidden bg-transparent">
-      {/* Uniform portrait ratio */}
+      
       <div className="relative w-full aspect-[4/5]">
         <Image
           src={person.img}
@@ -49,7 +49,7 @@ const PersonCard = ({ person }) => {
   )
 }
 
-/* ---------------- Investor card (matches width) ---------------- */
+/* ---------------- Investor card ---------------- */
 const InvestorCard = ({ img }) => {
   return (
     <div className="w-full h-full rounded-[24px] bg-[#F2F3F5] shadow-sm p-6 flex items-center justify-center">
@@ -67,7 +67,7 @@ const InvestorCard = ({ img }) => {
 export const Team = () => {
   const investorTrackRef = useRef(null)
 
-  // Reveal animation for person cards (with proper cleanup)
+  // Reveal animation for person cards
   useEffect(() => {
     const triggers = []
     const animations = []
@@ -95,7 +95,7 @@ export const Team = () => {
     }
   }, [])
 
-  // Auto-scroll investors right → left when in viewport
+  // Auto-scroll investors
   useEffect(() => {
     const track = investorTrackRef.current
     if (!track) return
@@ -193,7 +193,7 @@ export const Team = () => {
         </div>
       </section>
 
-      {/* ---------------- Centered Grids with larger spacing ---------------- */}
+      
       <section className="w-full bg-white py-16 md:py-24 px-6">
         {/* Founders */}
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
