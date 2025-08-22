@@ -1,10 +1,10 @@
-"use client";
+'use client'
 
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
-
-function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
+function ProblemBlock({ eyebrow = 'The Problem', title, imageSrc }) {
   return (
     <div
       className="
@@ -15,9 +15,7 @@ function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
     >
       {/* LEFT: Static text*/}
       <div className="relative">
-        <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">
-          {eyebrow}
-        </p>
+        <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">{eyebrow}</p>
 
         <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight text-[#0A3161] md:max-w-[48ch]">
           {title}
@@ -30,24 +28,26 @@ function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
       {/* RIGHT: Image */}
       <div className="relative">
         <div className="inline-block rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/10 bg-white">
-          <img
+          <Image
             src={imageSrc}
             alt="Problem visual"
+            width={560}
+            height={400}
             className="block max-w-[560px] w-full h-auto object-contain"
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
+            onError={e => {
+              e.currentTarget.style.display = 'none'
             }}
           />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 /* -------------------- Main About Section -------------------- */
 export default function AboutSection() {
   const PROBLEM =
-    "The U.S. relies on imported cathode active material (CAM). Domestic CAM production remains limited, expensive, and energy-intensive";
+    'The U.S. relies on imported cathode active material (CAM). Domestic CAM production remains limited, expensive, and energy-intensive'
 
   return (
     <main id="about" className="bg-white text-[#0B1220]">
@@ -93,5 +93,5 @@ export default function AboutSection() {
         </div>
       </section>
     </main>
-  );
+  )
 }
