@@ -3,12 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/* -------------------- Reusable Problem Block (static text) -------------------- */
+/* -------------------- Reusable Problem Block (no manual line breaks) -------------------- */
 function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
-  const splitAt = title.indexOf(". ") >= 0 ? title.indexOf(". ") + 1 : -1;
-  const line1 = splitAt > 0 ? title.slice(0, splitAt) : title;
-  const line2 = splitAt > 0 ? title.slice(splitAt + 1) : "";
-
   return (
     <div
       className="
@@ -17,24 +13,15 @@ function ProblemBlock({ eyebrow = "The Problem", title, imageSrc }) {
         md:grid-cols-[minmax(320px,48ch)_minmax(300px,560px)]
       "
     >
-      {/* LEFT: Static text */}
+      {/* LEFT: Static text (let the browser wrap naturally) */}
       <div className="relative">
         <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">
           {eyebrow}
         </p>
 
-        <div className="relative">
-          {/* (removed the decorative vertical accent line) */}
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-[#0A3161]">
-            <span>{line1}</span>
-            {line2 && (
-              <>
-                <br />
-                <span>{line2}</span>
-              </>
-            )}
-          </h2>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight text-[#0A3161] md:max-w-[48ch]">
+          {title}
+        </h2>
 
         {/* Underline */}
         <span className="mt-3 block h-[3px] w-full bg-[#0B1220]/80 rounded-full" />
@@ -64,7 +51,7 @@ export default function AboutSection() {
 
   return (
     <main id="about" className="bg-white text-[#0B1220]">
-      {/* HERO */}
+      {/* HERO (static, dark overlay for contrast) */}
       <section className="relative h-screen w-full overflow-hidden">
         <video
           src="/battery.mov"
@@ -76,6 +63,7 @@ export default function AboutSection() {
         />
         <div className="absolute inset-0 bg-black/60" />
 
+        {/* Centered copy */}
         <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
           <div>
             <motion.h1
@@ -100,9 +88,8 @@ export default function AboutSection() {
 
       {/* SINGLE PROBLEM SECTION */}
       <section className="relative w-full bg-white">
-        {/* Reduced side padding */}
         <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
-          <ProblemBlock title={PROBLEM} imageSrc="/about/problem_1.png" />
+          <ProblemBlock title={PROBLEM} imageSrc="/about/problem.png" />
         </div>
       </section>
     </main>
