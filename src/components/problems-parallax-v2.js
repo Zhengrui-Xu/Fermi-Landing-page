@@ -27,7 +27,6 @@ const ProblemsParallaxV2 = () => {
     {
       id: 1,
       title: 'Gen-1 CAM',
-      subtitle: 'Advanced Cathode Active Material',
       image: '/LogoFinal/OurProducts/Gen1After.png',
       features: [
         'Cuts energy use by 70% with proprietary low-temp calcination',
@@ -41,7 +40,6 @@ const ProblemsParallaxV2 = () => {
     {
       id: 2,
       title: 'Gen-2 CAM',
-      subtitle: 'Next-Generation Cathode Technology',
       image: '/LogoFinal/OurProducts/Gen2After.png',
       features: [
         'Cuts CAM cost by 50% using abundant Mn & Fe',

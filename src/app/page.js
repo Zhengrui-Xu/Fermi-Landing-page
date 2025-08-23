@@ -49,12 +49,12 @@ export default function Home() {
           <div className="min-h-screen flex items-center justify-center">
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-us-flag-blue mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading team...</p>
+              <p className="text-gray-600">Loading products...</p>
             </div>
           </div>
         }
       >
-        <Team />
+        <ProblemsParallaxV2 />
       </Suspense>
 
       <Suspense
@@ -62,12 +62,12 @@ export default function Home() {
           <div className="min-h-screen flex items-center justify-center">
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-us-flag-blue mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading products...</p>
+              <p className="text-gray-600">Loading team...</p>
             </div>
           </div>
         }
       >
-        <ProblemsParallaxV2 />
+        <Team />
       </Suspense>
 
       {/* <Section id="news" className="bg-accent/5">
