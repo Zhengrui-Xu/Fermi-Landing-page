@@ -58,9 +58,17 @@
     --chart-4: #22c55e;
     --chart-5: #eab308;
 
-    /* Typography Variables */
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    /* Typography Variables - Modern Geometric Sans */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    /* Brand Colors - Modern SaaS Palette */
+    --brand-primary: #0A3161;      /* Deep Navy */
+    --brand-secondary: #B31942;    /* Vibrant Red */
+    --brand-accent: #22C55E;       /* Success Green */
+    --text-primary: #1e293b;       /* Slate-800 */
+    --text-secondary: #64748b;     /* Slate-500 */
+    --text-muted: #94a3b8;         /* Slate-400 */
   }
 
   .dark {

@@ -22,10 +22,8 @@ const PersonCard = ({ person }) => {
       </div>
 
       <div className="bg-[#F0EFEB] rounded-b-[24px] p-3">
-        <div className="font-montserrat font-semibold text-[#0a3161] text-base leading-snug">
-          {person.name}
-        </div>
-        <div className="mt-1 text-[#0a3161] opacity-80 font-inter text-xs">{person.role}</div>
+        <div className="text-subtitle text-[#0a3161]">{person.name}</div>
+        <div className="mt-1 text-body-small text-[#0a3161] opacity-80">{person.role}</div>
         {person.linkedin && (
           <a
             href={person.linkedin}
@@ -187,11 +185,9 @@ export const Team = () => {
       <section id="team" className="bg-white">
         {/* Hero Subsection */}
         <div className="bg-fermi-gradient py-24 px-6 text-white">
-          <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-center sm:justify-start pl-4 text-left">
+          <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-center pl-4">
             <div className="pb-4">
-              <h1 className="text-[24px] sm:text-[40px] md:text-[52px] text-[#0A3161] font-bold uppercase tracking-tight font-montserrat leading-tight text-center sm:text-left underline">
-                Our Team
-              </h1>
+              <h1 className="text-display text-center">Our Team</h1>
             </div>
           </div>
         </div>
@@ -200,9 +196,9 @@ export const Team = () => {
       <section className="w-full bg-white py-16 md:py-24 px-6">
         {/* Founders */}
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
-          <h3 className="text-center underline font-montserrat text-[#0A3161] text-3xl sm:text-4xl md:text-5xl tracking-tight">
-            MEET THE FOUNDERS
-          </h3>
+          <div className="text-center mb-8">
+            <h3 className="text-title text-center">Meet The Founders</h3>
+          </div>
         </div>
 
         <div
@@ -223,9 +219,9 @@ export const Team = () => {
 
         {/* Advisors */}
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
-          <h3 className="text-center underline font-montserrat text-[#0A3161] text-3xl sm:text-4xl md:text-5xl tracking-tight">
-            MEET THE ADVISORS
-          </h3>
+          <div className="text-center mb-8">
+            <h3 className="text-title text-center">Meet The Advisors</h3>
+          </div>
         </div>
 
         <div
@@ -246,9 +242,9 @@ export const Team = () => {
 
         {/* Investors */}
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
-          <h3 className="text-center underline font-montserrat text-[#0A3161] text-3xl sm:text-4xl md:text-5xl tracking-tight">
-            SUPPORTED BY
-          </h3>
+          <div className="text-center mb-8">
+            <h3 className="text-title text-center">Supported By</h3>
+          </div>
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-6 md:px-8">

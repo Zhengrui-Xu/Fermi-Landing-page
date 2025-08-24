@@ -216,7 +216,7 @@ const ProblemsParallaxV2 = () => {
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <div className="text-center mb-8">
-            <h1 className="text-section-title text-gray-900 mb-4">Our Products</h1>
+            <h1 className="text-display text-center mb-4">Our Products</h1>
           </div>
 
           {/* Products Grid - 1 col mobile, 2 col iPad */}
@@ -262,7 +262,7 @@ const ProblemsParallaxV2 = () => {
 
                   {/* Key Features */}
                   <div className="space-y-4">
-                    <h4 className="text-card-title text-gray-900 text-center">Key Features</h4>
+                    <h4 className="text-subtitle text-gray-900 text-center">Key Features</h4>
                     <ul className="space-y-3">
                       {product.features.map((feature, featureIndex) => (
                         <li
@@ -314,7 +314,7 @@ const ProblemsParallaxV2 = () => {
         {/* Static Title */}
         <div className="absolute top-24 left-0 right-0 z-30 pointer-events-none">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-900">Our Products</h1>
+            <h1 className="text-hero mb-4">Our Products</h1>
           </div>
         </div>
 

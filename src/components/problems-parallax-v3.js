@@ -185,7 +185,7 @@ const OurProductsParallax = () => {
     return (
       <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Products</h1>
+          <h1 className="text-display text-center mb-4">Our Products</h1>
           <p className="text-lg md:text-xl font-medium text-gray-700">Loading...</p>
         </div>
       </div>
@@ -198,7 +198,7 @@ const OurProductsParallax = () => {
       <div className="w-full bg-gradient-to-br from-slate-50 via-white to-slate-100">
         {/* Section Title */}
         <div className="py-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Products</h1>
+          <h1 className="text-display text-center mb-4">Our Products</h1>
         </div>
 
         {/* Products Sections */}
@@ -340,7 +340,7 @@ const OurProductsParallax = () => {
       {/* Section Title - Static */}
       <div className="absolute top-16 left-0 right-0 z-30 pointer-events-none">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-2 text-gray-900">Our Products</h1>
+          <h1 className="text-hero mb-2">Our Products</h1>
         </div>
       </div>
 

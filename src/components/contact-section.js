@@ -59,15 +59,15 @@ export const ContactSection = () => {
       className="relative min-h-screen flex items-center py-24 sm:py-32 bg-white"
     >
       <div className="container mx-auto px-4 relative z-10">
+        {/* Centered Section Title */}
+        <div className="text-center mb-16">
+          <p className="text-label mb-4 text-accent-red">Contact</p>
+          <h2 className="text-display text-center">Connect With Us</h2>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left Column - Contact Information */}
           <div>
-            <div className="mb-4">
-              <h2 className="text-card-subtitle mb-2 tracking-wider text-accent-red">Contact</h2>
-
-              <h2 className="text-section-title">Connect With Us</h2>
-            </div>
-
             <div className="flex flex-col gap-4">
               <div>
                 <div className="flex gap-2 mb-1">

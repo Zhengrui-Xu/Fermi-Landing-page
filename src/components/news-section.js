@@ -8,12 +8,14 @@ export const NewsSection = () => {
     <section id="news" className="bg-white">
       {/* Hero Subsection */}
       <div className="bg-fermi-gradient py-24 px-6 text-[#124f99]">
-        <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-start pl-4 text-left">
+        <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-center pl-4">
           <div className="pb-4">
-            <h1 className="text-section-title text-center sm:text-left">Latest At Fermi Energy</h1>
-            <p className="text-body-large italic text-[#3C83AC] leading-relaxed mt-0">
-              Stay informed about our breakthroughs, media highlights and milestones
-            </p>
+            <div className="text-center mb-8">
+              <h1 className="text-display text-center mb-4">Latest At Fermi Energy</h1>
+              <p className="text-body-large italic text-[#3C83AC] leading-relaxed">
+                Stay informed about our breakthroughs, media highlights and milestones
+              </p>
+            </div>
           </div>
         </div>
       </div>
