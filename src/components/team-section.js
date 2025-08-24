@@ -63,6 +63,7 @@ const InvestorCard = ({ img }) => {
         width={200}
         height={64}
         className="w-full h-14 md:h-16 object-contain"
+        style={{ width: 'auto' }}
       />
     </div>
   )
@@ -271,6 +272,7 @@ export const Team = () => {
                       width={220}
                       height={70}
                       className="h-14 md:h-16 object-contain"
+                      style={{ width: 'auto' }}
                     />
                   </div>
                 ))}

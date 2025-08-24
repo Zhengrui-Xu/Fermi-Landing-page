@@ -80,6 +80,7 @@ export default function MagicNavbar() {
                 height={80}
                 priority
                 className="h-full w-auto object-contain"
+                style={{ width: 'auto' }}
               />
             </div>
           </a>
