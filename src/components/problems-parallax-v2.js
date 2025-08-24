@@ -212,14 +212,11 @@ const ProblemsParallaxV2 = () => {
   return (
     <>
       {/* Mobile & iPad: 2-Column Layout */}
-      <section className="block xl:hidden py-12 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <section className="block xl:hidden pt-20 pb-8 bg-gradient-to-br from-slate-50 via-white to-slate-100">
         <div className="container mx-auto px-4">
           {/* Section Title */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="text-section-title text-gray-900 mb-4">Our Products</h1>
-            <p className="text-body-large text-gray-700 max-w-3xl mx-auto px-2">
-              Advanced cathode active materials powering the future of energy storage
-            </p>
           </div>
 
           {/* Products Grid - 1 col mobile, 2 col iPad */}
@@ -315,12 +312,9 @@ const ProblemsParallaxV2 = () => {
         />
 
         {/* Static Title */}
-        <div className="absolute top-16 left-0 right-0 z-30 pointer-events-none">
+        <div className="absolute top-24 left-0 right-0 z-30 pointer-events-none">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-900">Our Products</h1>
-            <p className="text-lg md:text-xl font-medium text-gray-700">
-              Advanced cathode active materials powering the future of energy storage
-            </p>
           </div>
         </div>
 
@@ -334,11 +328,17 @@ const ProblemsParallaxV2 = () => {
               }}
               className="absolute inset-0 flex items-center justify-center p-4 lg:p-6 xl:p-12"
             >
-              <div className="max-w-6xl xl:max-w-7xl mx-auto w-full h-full flex items-center">
+              <div className="max-w-6xl xl:max-w-7xl mx-auto w-full h-full flex items-center mt-16">
                 {/* Desktop: Side-by-side Layout */}
                 <div className="grid grid-cols-2 gap-8 lg:gap-12 xl:gap-16 h-fit max-h-[85vh] items-center w-full">
                   {/* Left: Content */}
-                  <div className="space-y-6 lg:space-y-8 bg-white/95 backdrop-blur-md rounded-3xl p-6 lg:p-8 xl:p-10 shadow-2xl border border-white/30 overflow-y-auto max-h-[75vh]">
+                  <div
+                    className="space-y-6 lg:space-y-8 bg-white/95 backdrop-blur-md rounded-3xl p-6 lg:p-8 xl:p-10 shadow-2xl border border-white/30 overflow-y-auto max-h-[75vh]"
+                    style={{
+                      padding: '1rem',
+                      marginTop: '2rem',
+                    }}
+                  >
                     <div className="flex items-center gap-4 lg:gap-6 mb-6 lg:mb-8">
                       <div
                         className="p-3 lg:p-4 xl:p-5 rounded-xl shadow-lg"
@@ -381,14 +381,25 @@ const ProblemsParallaxV2 = () => {
                   </div>
 
                   {/* Right: Image */}
-                  <div className="flex items-center justify-center h-full">
-                    <div className="w-full max-w-sm lg:max-w-md xl:max-w-lg aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 transition-transform duration-300 hover:scale-105">
+                  <div
+                    className="flex items-center justify-center h-full"
+                    style={{
+                      marginTop: '2rem',
+                    }}
+                  >
+                    <div
+                      className="w-full max-w-sm lg:max-w-md xl:max-w-lg aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 transition-transform duration-300 hover:scale-105"
+                      style={{
+                        padding: '0.5rem',
+                      }}
+                    >
                       <Image
                         src={product.image}
                         alt={product.title}
                         width={500}
                         height={375}
-                        className="w-full h-full object-contain p-3 lg:p-4 xl:p-6"
+                        className="w-full h-full object-contain"
+                        style={{ padding: '0.25rem' }}
                       />
                     </div>
                   </div>

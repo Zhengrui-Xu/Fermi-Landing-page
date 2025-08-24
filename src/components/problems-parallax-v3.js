@@ -199,9 +199,6 @@ const OurProductsParallax = () => {
         {/* Section Title */}
         <div className="py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Products</h1>
-          <p className="text-lg md:text-xl font-medium text-gray-700 px-4">
-            Advanced cathode active materials powering the future of energy storage
-          </p>
         </div>
 
         {/* Products Sections */}
@@ -344,9 +341,6 @@ const OurProductsParallax = () => {
       <div className="absolute top-16 left-0 right-0 z-30 pointer-events-none">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-2 text-gray-900">Our Products</h1>
-          <p className="text-lg md:text-xl font-medium text-gray-700">
-            Advanced cathode active materials powering the future of energy storage
-          </p>
         </div>
       </div>
 
