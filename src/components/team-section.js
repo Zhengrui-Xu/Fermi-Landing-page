@@ -185,8 +185,8 @@ export const Team = () => {
       <section id="team" className="bg-white">
         {/* Hero Subsection */}
         <div className="bg-fermi-gradient py-24 px-6 text-white">
-          <div className="min-h-[12rem] sm:min-h-[16rem] flex items-end justify-center pl-4">
-            <div className="pb-4">
+          <div className="min-h-[12rem] sm:min-h-[16rem] flex items-center justify-center">
+            <div>
               <h1 className="text-display text-center">Our Team</h1>
             </div>
           </div>

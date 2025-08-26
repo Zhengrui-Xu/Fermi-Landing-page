@@ -27,7 +27,7 @@ const ProblemsParallaxV2 = () => {
     {
       id: 1,
       title: 'Gen-1 CAM',
-      image: '/LogoFinal/OurProducts/Gen1After.png',
+      image: '/LogoFinal/OurProducts/gen1cam.jpg',
       features: [
         'Cuts energy use by 70% with proprietary low-temp calcination',
         'Validated drop-in solutions for NMC & NCA chemistries',
