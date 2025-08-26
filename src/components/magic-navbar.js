@@ -151,30 +151,7 @@ export default function MagicNavbar() {
             className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur"
           >
             <div className="container py-4">
-              {/* Mobile Logo */}
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="h-10 w-10 relative">
-                  <Image
-                    src="/LogoFinal/ONLY LOGO svgs/Only_Logo_High.svg"
-                    alt="Fermi Energy Logo"
-                    width={40}
-                    height={40}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-                <div className="h-10 w-auto relative">
-                  <Image
-                    src="/LogoFinal/TextLogo/text_logo_mid.svg"
-                    alt="Fermi Energy"
-                    width={200}
-                    height={40}
-                    className="h-full w-auto object-contain"
-                    style={{ width: 'auto' }}
-                  />
-                </div>
-              </div>
-
-              {/* Mobile Navigation */}
+              {/* Mobile Navigation - No Logo */}
               <nav className="flex flex-col space-y-4">
                 {navigation.map(item => (
                   <a

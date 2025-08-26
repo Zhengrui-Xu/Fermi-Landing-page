@@ -34,7 +34,7 @@ function ProblemBlock({ eyebrow = 'The Problem', title, imageSrc }) {
             alt="Problem visual"
             width={560}
             height={400}
-            className="block w-full max-w-[560px] h-auto object-contain"
+            className="problem-image block w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[560px] h-auto object-contain"
             style={{ width: 'auto' }}
             onError={e => {
               e.currentTarget.style.display = 'none'

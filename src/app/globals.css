@@ -61,14 +61,14 @@
     /* Typography Variables - Modern Geometric Sans */
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Poppins', sans-serif;
-    
+
     /* Brand Colors - Modern SaaS Palette */
-    --brand-primary: #0A3161;      /* Deep Navy */
-    --brand-secondary: #B31942;    /* Vibrant Red */
-    --brand-accent: #22C55E;       /* Success Green */
-    --text-primary: #1e293b;       /* Slate-800 */
-    --text-secondary: #64748b;     /* Slate-500 */
-    --text-muted: #94a3b8;         /* Slate-400 */
+    --brand-primary: #0a3161; /* Deep Navy */
+    --brand-secondary: #b31942; /* Vibrant Red */
+    --brand-accent: #22c55e; /* Success Green */
+    --text-primary: #1e293b; /* Slate-800 */
+    --text-secondary: #64748b; /* Slate-500 */
+    --text-muted: #94a3b8; /* Slate-400 */
   }
 
   .dark {
@@ -106,11 +106,11 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     overflow-x: hidden;
   }
-  
+
   body {
     @apply bg-background text-foreground font-body;
     overflow-x: hidden;
@@ -343,13 +343,18 @@ html.lenis {
     margin-right: auto !important;
     max-width: 100% !important;
   }
-  
+
   body {
     overflow-x: hidden;
   }
-  
+
   .hero-title h1 {
     font-size: clamp(1.5rem, 4vw, 2rem) !important;
+  }
+
+  /* Make problem image smaller on mobile */
+  .problem-image {
+    max-width: 250px !important;
   }
 }
 
@@ -359,6 +364,11 @@ html.lenis {
     max-width: 90vw !important;
     padding-left: 32px !important;
     padding-right: 32px !important;
+  }
+
+  /* Make problem image smaller on iPad */
+  .problem-image {
+    max-width: 350px !important;
   }
 }
 
