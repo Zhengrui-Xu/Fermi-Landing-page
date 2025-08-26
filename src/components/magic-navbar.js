@@ -169,6 +169,7 @@ export default function MagicNavbar() {
                     width={200}
                     height={40}
                     className="h-full w-auto object-contain"
+                    style={{ width: 'auto' }}
                   />
                 </div>
               </div>
