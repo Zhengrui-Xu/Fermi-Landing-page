@@ -47,10 +47,33 @@ export const ContactSection = () => {
   function onSubmit(values) {
     const { firstName, lastName, email, subject, message } = values
 
-    // Update the email to match Fermi Energy contact
-    const mailToLink = `mailto:fenglin@fermienergy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hello, I am ${firstName} ${lastName}.\n\nMy email is: ${email}\n\nMessage:\n${message}`)}`
+    // Create a form element dynamically
+    const form = document.createElement('form')
+    form.action = 'https://formsubmit.co/RayXu@fermienergy.com'
+    form.method = 'POST'
+    form.style.display = 'none'
 
-    window.location.href = mailToLink
+    // Add form fields
+    const fields = {
+      'First Name': firstName,
+      'Last Name': lastName,
+      Email: email,
+      Subject: subject,
+      Message: message,
+      _captcha: 'false',
+      _next: window.location.origin + '/thank-you', // Redirect after submission
+    }
+
+    Object.entries(fields).forEach(([name, value]) => {
+      const input = document.createElement('input')
+      input.type = 'hidden'
+      input.name = name
+      input.value = value
+      form.appendChild(input)
+    })
+
+    document.body.appendChild(form)
+    form.submit()
   }
 
   return (
