@@ -197,15 +197,15 @@ export const Team = () => {
         {/* Founders */}
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
           <div className="text-center mb-8">
-            <h3 className="text-title text-center">Meet The Founders</h3>
+            <h3 className="text-title">Meet The Founders</h3>
           </div>
         </div>
 
         <div
           className="
-            mx-auto w-full max-w-7xl px-6 md:px-8 mb-28
+            mx-auto w-full max-w-5xl px-6 md:px-8 mb-28
             [--card-w:260px]
-            grid grid-cols-1 md:grid-cols-3 place-items-center
+            grid grid-cols-1 md:grid-cols-2 place-items-center justify-center
             gap-y-16 lg:gap-y-24
             gap-x-14 lg:gap-x-20
           "
@@ -220,7 +220,7 @@ export const Team = () => {
         {/* Advisors */}
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
           <div className="text-center mb-8">
-            <h3 className="text-title text-center">Meet The Advisors</h3>
+            <h3 className="text-title">Meet The Advisors</h3>
           </div>
         </div>
 
@@ -243,7 +243,7 @@ export const Team = () => {
         {/* Investors */}
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8 mb-10 md:mb-14">
           <div className="text-center mb-8">
-            <h3 className="text-title text-center">Supported By</h3>
+            <h3 className="text-title">Supported By</h3>
           </div>
         </div>
 
