@@ -9,15 +9,16 @@ function ProblemBlock({ eyebrow = 'The Problem', title, imageSrc }) {
     <div
       className="
         grid items-center
-        gap-10 md:gap-14
-        md:grid-cols-[minmax(320px,48ch)_minmax(300px,560px)]
+        gap-8 sm:gap-10 lg:gap-14
+        grid-cols-1 lg:grid-cols-[minmax(320px,48ch)_minmax(300px,560px)]
+        max-w-none
       "
     >
       {/* LEFT: Static text*/}
-      <div className="relative">
+      <div className="relative px-2 sm:px-4 lg:px-0">
         <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">{eyebrow}</p>
 
-        <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight text-[#0A3161] md:max-w-[48ch]">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight tracking-tight text-[#0A3161] max-w-none lg:max-w-[48ch]">
           {title}
         </h2>
 
@@ -26,14 +27,14 @@ function ProblemBlock({ eyebrow = 'The Problem', title, imageSrc }) {
       </div>
 
       {/* RIGHT: Image */}
-      <div className="relative">
-        <div className="inline-block rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/10 bg-white">
+      <div className="relative flex justify-center lg:justify-start px-2 sm:px-4 lg:px-0">
+        <div className="inline-block rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/10 bg-white max-w-full">
           <Image
             src={imageSrc}
             alt="Problem visual"
             width={560}
             height={400}
-            className="block max-w-[560px] w-full h-auto object-contain"
+            className="block w-full max-w-[560px] h-auto object-contain"
             style={{ width: 'auto' }}
             onError={e => {
               e.currentTarget.style.display = 'none'
