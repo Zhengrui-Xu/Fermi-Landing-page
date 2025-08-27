@@ -1,15 +1,13 @@
-"use client";
+'use client'
 
-import React from "react";
-import Image from "next/image";
-import { FaLinkedin } from "react-icons/fa";
+import React from 'react'
+import Image from 'next/image'
+import { FaLinkedin } from 'react-icons/fa'
 
 export default function Footer() {
   return (
     <footer className="bg-[#FAFAFA] text-[#0A3161] py-12 mt-12 border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-        
-        
         <div className="flex flex-col items-center md:items-start space-y-4">
           <div className="flex items-center space-x-4">
             <div className="h-20 w-20 relative">
@@ -36,26 +34,24 @@ export default function Footer() {
           </p>
         </div>
 
-        
         <nav className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-8 mt-8 md:mt-0">
-          <a href="#home" className="font-montserrat font-semibold text-base ">
+          <a href="#home" className="font-montserrat font-semibold text-base">
             Home
           </a>
-          <a href="#about" className="font-montserrat font-semibold text-base ">
+          <a href="#about" className="font-montserrat font-semibold text-base">
             About
           </a>
-          <a href="#team" className="font-montserrat font-semibold text-base ">
-           Team
+          <a href="#team" className="font-montserrat font-semibold text-base">
+            Team
           </a>
-          <a href="#news" className="font-montserrat font-semibold text-base ">
+          <a href="#news" className="font-montserrat font-semibold text-base">
             News
           </a>
-          <a href="#contact" className="font-montserrat font-semibold text-base ">
+          <a href="#contact" className="font-montserrat font-semibold text-base">
             Contact Us
           </a>
         </nav>
 
-        
         <div className="mt-8 md:mt-0">
           <a
             href="https://www.linkedin.com/company/fermienergy/posts/?feedView=all"
@@ -69,5 +65,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
