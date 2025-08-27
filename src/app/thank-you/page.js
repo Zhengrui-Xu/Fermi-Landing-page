@@ -10,9 +10,6 @@ export default function ThankYou() {
         <div className="mb-6">
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
           <h1 className="text-display text-primary mb-4">Thank You!</h1>
-          <p className="text-body-large text-secondary">
-            Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
-          </p>
         </div>
 
         <div className="space-y-4">
