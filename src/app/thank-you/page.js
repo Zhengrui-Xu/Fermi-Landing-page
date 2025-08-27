@@ -29,7 +29,7 @@ export default function ThankYou() {
               href="mailto:RayXu@fermienergy.com"
               className="text-[#0A3161] hover:text-[#B31942] underline"
             >
-              fenglin@fermienergy.com
+              RayXu@fermienergy.com
             </a>
           </div>
         </div>
