@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import MagicNavbar from '@/components/magic-navbar'
 import Hero from '@/components/hero'
 import Section from '@/components/section'
+import Footer from '@/components/footer'
 
 // Lazy load components below the fold for better performance
 const ProblemsParallaxV2 = lazy(() => import('@/components/problems-parallax-v2'))
@@ -103,6 +104,18 @@ export default function Home() {
         }
       >
         <ContactSection />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-us-flag-blue mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading footer...</p>
+            </div>
+          </div>
+        }
+      >
+        <Footer />
       </Suspense>
     </>
   )
