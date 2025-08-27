@@ -151,7 +151,7 @@ const ProblemsParallaxV2 = () => {
                       alt={product.title}
                       width={500}
                       height={375}
-                      className="w-full h-full object-contain p-3 lg:p-6"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
