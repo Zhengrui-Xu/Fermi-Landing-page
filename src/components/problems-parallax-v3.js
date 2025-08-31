@@ -47,7 +47,7 @@ const OurProductsParallax = () => {
       subtitle: "Fermi Energy's Gen-2 CAM",
       description:
         'Cuts CAM cost by 50% using abundant Mn & Fe. Enables ultra-fast charging. Performs reliably across a wide temperature range. Built on a secure domestic feedstock supply chain.',
-      image: '/LogoFinal/OurProducts/Gen2After.png',
+      image: '/LogoFinal/OurProducts/trial1.png',
       features: [
         'Cuts CAM cost by 50% using abundant Mn & Fe',
         'Enables ultra-fast charging',

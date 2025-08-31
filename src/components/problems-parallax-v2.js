@@ -34,7 +34,7 @@ const ProblemsParallaxV2 = () => {
       id: 2,
       title: 'Gen-2 CAM',
       subtitle: "Fermi Energy's Gen-2 CAM",
-      image: '/LogoFinal/OurProducts/Gen2After.png',
+      image: '/LogoFinal/OurProducts/trial1.png',
       features: [
         'Cuts CAM cost by 50% using abundant Mn & Fe',
         'Enables ultra-fast charging',
