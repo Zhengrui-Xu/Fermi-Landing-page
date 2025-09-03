@@ -31,7 +31,7 @@ const OurProductsParallax = () => {
       subtitle: "Fermi Energy's Gen-1 CAM",
       description:
         'Cuts energy use by 70% with proprietary low-temp calcination. Validated drop-in solutions for NMC & NCA chemistries. Delivers high energy density and long cycle life. Supports a secure domestic feedstock supply chain.',
-      image: '/LogoFinal/OurProducts/gen1cam.jpg',
+      image: '/LogoFinal/OurProducts/gen1cam.png',
       features: [
         'Cuts energy use by 70% with proprietary low-temp calcination',
         'Validated drop-in solutions for NMC & NCA chemistries',

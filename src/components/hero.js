@@ -140,7 +140,7 @@ export default function Hero() {
             <div className="hero-title">
               <h1 className="text-black font-medium leading-relaxed mb-8 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl normal-case">
                 <div className="mb-4">High-Performance Cathode Active Materials</div>
-                <div>Built in the USA for Tomorrow&apos;s Batteries</div>
+                <div>Made in the U.S. for Tomorrow&apos;s Batteries</div>
               </h1>
             </div>
 

@@ -68,13 +68,22 @@ export default function AboutSection() {
         {/* Centered copy */}
         <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
           <div>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.05 }}
+              className="mt-4 text-lg md:text-3xl text-gray-200 mb-10"
+            >
+              Our Mission
+            </motion.p>
+            {/* <hr /> */}
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-white text-4xl md:text-6xl font-semibold"
             >
-              Powering the Future with Advanced Cathodes
+              ENABLING AN ELECTRIC FUTURE WITH ADVANCED CATHODES
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -82,7 +91,7 @@ export default function AboutSection() {
               transition={{ duration: 0.7, delay: 0.05 }}
               className="mt-4 text-lg md:text-2xl text-gray-200"
             >
-              High performance. Built in the U.S. Designed for energy independence.
+              High-performance Cathodes, Made in the U.S. with Greener, Smarter Technology
             </motion.p>
           </div>
         </div>

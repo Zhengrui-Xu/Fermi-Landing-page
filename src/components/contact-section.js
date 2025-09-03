@@ -101,7 +101,7 @@ export const ContactSection = () => {
                   <div className="mb-2">
                     <strong>Headquarter:</strong>
                     <br />
-                    120 Hawley Street,
+                    120 Hawley Street
                     <br />
                     Binghamton, NY 13901
                   </div>
@@ -153,7 +153,7 @@ export const ContactSection = () => {
                           </FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="Leopold"
+                              placeholder="Enter Your First Name"
                               {...field}
                               className="border-gray-300 font-body focus:border-blue-500 bg-white"
                             />
@@ -172,7 +172,7 @@ export const ContactSection = () => {
                           </FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="Miranda"
+                              placeholder="Enter Your Last Name"
                               {...field}
                               className="border-gray-300 font-body focus:border-blue-500 bg-white"
                             />
@@ -195,7 +195,7 @@ export const ContactSection = () => {
                           <FormControl>
                             <Input
                               type="email"
-                              placeholder="leopoldmiranda@gmail.com"
+                              placeholder="Enter Your Email"
                               {...field}
                               className="border-gray-300 font-body focus:border-blue-500 bg-white"
                             />
@@ -287,7 +287,7 @@ export const ContactSection = () => {
                           <FormControl>
                             <Textarea
                               rows={5}
-                              placeholder="Your message..."
+                              placeholder="Your Message..."
                               className="resize-none border-gray-300 font-body focus:border-blue-500 bg-white"
                               {...field}
                             />
