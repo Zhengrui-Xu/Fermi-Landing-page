@@ -10,7 +10,7 @@ export const newsItems = [
     title:
       'Fermi Energy Secures NSF Grant to Advance Cost-Effective Dry-Coating for Mn-Rich Cathodes',
     date: 'December 2024',
-    link: 'https://www.energy.gov/eere/vehicles/vehicle-technologies-office',
+    link: 'https://upstatenyengine.org/uncategorized/engine-awards-1-6-million-for-battery-technologies-rd/',
   },
   {
     title:
@@ -22,7 +22,7 @@ export const newsItems = [
     title:
       'Fermi Energy Selected for ChargeUp Accelerator to Drive Battery Innovation in Upstate NY',
     date: 'April 2024',
-    link: 'https://neny.org/new-energy-new-york-selects-four-innovative-battery-companies-for-chargeup-accelerator/',
+    link: 'https://neny.org/programs/chargeup/',
   },
   {
     title:
