@@ -46,4 +46,9 @@ export const newsItems = [
     date: 'September 2022',
     link: 'https://ramprb.com/ramp-welcomes-5-startups-into-fall-2022-cohort/',
   },
+    {
+    title: 'TESTING',
+    date: 'Testing',
+    link: 'testing',
+  },
 ]
