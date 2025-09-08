@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // lib/newsData.js
 
 export const newsItems = [
