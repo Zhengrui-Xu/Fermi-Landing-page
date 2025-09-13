@@ -3,7 +3,12 @@
 
 export const newsItems = [
   {
-    title: 'Fermi Energy, Inc. has been selected to join Cohort 5 of Venture For ClimateTech (V4C)',
+    title: 'Fermi Energy Co-Founder Selected for 2025 Activate Fellowship',
+    date: 'June 2025',
+    link: 'https://www.activate.org/fermi-energy',
+  },
+   {
+    title: 'Fermi Energy has been selected to join Cohort 5 of Venture For ClimateTech (V4C)',
     date: 'May 2025',
     link: 'https://www.globenewswire.com/news-release/2025/05/20/3084959/0/en/Venture-for-ClimateTech-Unveils-Newest-Cohort-Powering-the-Future-of-Clean-Tech.html',
   },
