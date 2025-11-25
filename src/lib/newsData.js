@@ -3,24 +3,29 @@
 
 export const newsItems = [
   {
+    title: 'Fermi Energy Receives Grant from New Energy New York to Develop Ni- and Co-free Cathode Active Materials ',
+    date: 'Nov 2025',
+    link: 'https://neny.org/press/neny-awards-498k-to-battery-and-clean-energy-startups/?utm_campaign=3196230-NENY%20General&utm_medium=email&_hsenc=p2ANqtz-_6ujJzFbpjFSWOI4gW5-i2yrSWSs_JHE0HlNPFJuC-fa6B4yoyLIe1DR-v6UqNQVrLp-KuNzdQDdbv_oUUraSwRMjkOA&_hsmi=391379741&utm_content=391379741&utm_source=hs_email',
+  },
+    {
     title: 'Fermi Energy Co-Founder Selected for 2025 Activate Fellowship',
     date: 'June 2025',
     link: 'https://www.activate.org/fermi-energy',
   },
    {
-    title: 'Fermi Energy has been selected to join Cohort 5 of Venture For ClimateTech (V4C)',
+    title: 'Fermi Energy selected to join Cohort 5 of Venture For ClimateTech (V4C)',
     date: 'May 2025',
     link: 'https://www.globenewswire.com/news-release/2025/05/20/3084959/0/en/Venture-for-ClimateTech-Unveils-Newest-Cohort-Powering-the-Future-of-Clean-Tech.html',
   },
   {
     title:
-      'Fermi Energy Secures NSF Grant to Advance Cost-Effective Dry-Coating for Mn-Rich Cathodes',
+      'Fermi Energy Receives NSF Grant to Advance Cost-Effective Dry-Coating for Mn-Rich Cathodes',
     date: 'December 2024',
-    link: 'https://upstatenyengine.org/uncategorized/engine-awards-1-6-million-for-battery-technologies-rd/',
+    link: 'https://www.upstatenyengine.org/news/engine-awards-1-6-million-for-battery-technologies-r-d',
   },
   {
     title:
-      'Fermi Energy Secures DOE STTR Phase I Grant to Advance Sodium-Ion Battery Cathode Materials',
+      'Fermi Energy Receives DOE STTR Phase I Grant to Advance Sodium-Ion Battery Cathode Materials',
     date: 'July 2024',
     link: 'https://www.energy.gov/eere/vehicles/vehicle-technologies-office',
   },
@@ -37,7 +42,7 @@ export const newsItems = [
     link: 'https://www.energy.gov/eere/ammto/funding-selections-ammto-bto-and-oe-fy22-multi-topic-foa',
   },
   {
-    title: 'Fermi Energy Awarded VIPC CCF Grant to Develop Advanced Cathode Materials',
+    title: 'Fermi Energy Receives VIPC CCF Grant to Develop Advanced Cathode Materials',
     date: 'June 2023',
     link: 'https://www.wtnh.com/business/press-releases/ein-presswire/644654222/vipc-awards-commonwealth-commercialization-fund-grant-to-fermi-energy-inc/',
   },
