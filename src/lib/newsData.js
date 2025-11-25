@@ -44,7 +44,7 @@ export const newsItems = [
   {
     title: 'Fermi Energy Receives VIPC CCF Grant to Develop Advanced Cathode Materials',
     date: 'June 2023',
-    link: 'https://www.wtnh.com/business/press-releases/ein-presswire/644654222/vipc-awards-commonwealth-commercialization-fund-grant-to-fermi-energy-inc/',
+    link: 'https://www.einpresswire.com/article/644654222/vipc-awards-commonwealth-commercialization-fund-grant-to-fermi-energy-inc',
   },
   {
     title:
