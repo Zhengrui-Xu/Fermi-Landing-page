@@ -3,12 +3,12 @@
 
 export const newsItems = [
     {
-    title: ' Fermi Energy Receives Grant to Develop Sodium Ion Battery Materials ',
+    title: ' Fermi Energy Receives DOE Grant to Develop Sodium-Ion Battery Materials ',
     date: 'Nov 2026',
     link: 'https://science.osti.gov/sbir/awards/',
   },
    {
-    title: ' Fermi Energy has been selected to join Third Derivative, RMI’s global climate tech accelerator ',
+    title: ' Fermi Energy Joins Third Derivative, RMI’s Global Climate Tech Accelerator ',
     date: 'May 2026',
     link: 'https://www.third-derivative.org/blog/third-derivative-unveils-26-startup-climate-cohort-focused-on-hard-tech-and-deployment',
   },
@@ -23,7 +23,7 @@ export const newsItems = [
     link: 'https://www.activate.org/fermi-energy',
   },
    {
-    title: 'Fermi Energy selected to join Cohort 5 of Venture For ClimateTech (V4C)',
+    title: 'Fermi Energy Joins Venture for ClimateTech Cohort 5',
     date: 'May 2025',
     link: 'https://www.globenewswire.com/news-release/2025/05/20/3084959/0/en/Venture-for-ClimateTech-Unveils-Newest-Cohort-Powering-the-Future-of-Clean-Tech.html',
   },
@@ -41,13 +41,13 @@ export const newsItems = [
   },
   {
     title:
-      'Fermi Energy Selected for ChargeUp Accelerator to Drive Battery Innovation in Upstate NY',
+      'Fermi Energy Joins ChargeUp Accelerator Cohort 1 to Advance Battery Innovation in Upstate New York',
     date: 'April 2024',
     link: 'https://neny.org/programs/chargeup/',
   },
   {
     title:
-      'Fermi Energy Receives DOE AMMTO Grant to Advance Cathode Materials Manufacturing Technologies',
+      'Fermi Energy Receives DOE Grant to Advance Cathode Materials Manufacturing Technologies',
     date: 'September 2023',
     link: 'https://www.energy.gov/eere/ammto/funding-selections-ammto-bto-and-oe-fy22-multi-topic-foa',
   },
@@ -58,7 +58,7 @@ export const newsItems = [
   },
   {
     title:
-      'Fermi Energy Receives ARPA-E Funding to Develop Fast-Charging, All-Weather EV Batteries',
+      'Fermi Energy Receives ARPA-E Grant to Develop Fast-Charging, All-Weather EV Batteries',
     date: 'January 2023',
     link: 'https://arpa-e.energy.gov/news-and-events/news-and-insights/us-department-energy-announces-42-million-develop-more-affordable-and-efficient-advanced-electric-vehicle-batteries-america',
   },
