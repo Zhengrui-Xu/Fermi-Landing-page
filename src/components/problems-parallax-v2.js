@@ -22,10 +22,10 @@ const ProblemsParallaxV2 = () => {
       subtitle: "Fermi Energy's Gen-1 CAM",
       image: '/LogoFinal/OurProducts/gen1cam.png',
       features: [
-        'Cuts energy use by 70% with proprietary low-temp calcination',
+        'Cuts energy use by 80% with proprietary low-temp calcination',
         'Validated drop-in solutions for NMC & NCA chemistries',
         'Delivers high energy density and long cycle life',
-        'Supports a secure domestic feedstock supply chain',
+        'FEOC-free compliant supply chain',
       ],
       icon: Battery,
       color: colors.oldGloryBlue,
