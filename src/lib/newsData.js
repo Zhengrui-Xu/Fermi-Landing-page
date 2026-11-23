@@ -2,6 +2,11 @@
 // lib/newsData.js
 
 export const newsItems = [
+    {
+    title: ' Fermi Energy Receives Grant to Develop Sodium Ion Battery Materials ',
+    date: 'Nov 2026',
+    link: 'https://science.osti.gov/sbir/awards/',
+  },
    {
     title: ' Fermi Energy has been selected to join Third Derivative, RMI’s global climate tech accelerator ',
     date: 'May 2026',
